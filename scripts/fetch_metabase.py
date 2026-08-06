@@ -206,6 +206,26 @@ def write_debug_snapshot(cols, rows, matched_count, resource_col, chapter_col, d
         "columns": sample_cols,
         "rows": [{c: r.get(c) for c in sample_cols} for r in sample_source[:5]],
     }
+
+    # The first non-empty sample happened to be all null resource_ids — that
+    # tells us nothing. Specifically hunt for rows where it IS set, and check
+    # whether RESOURCE_ID shows up anywhere in the whole table at all, so we
+    # can tell "wrong column/format" apart from "875A isn't actually in this
+    # data". Only id/name/type/resource_ids are included — same safe subset.
+    if resource_col:
+        non_null = [r for r in rows if r.get(resource_col) not in (None, "", [])]
+        target_anywhere = [
+            r for r in rows
+            if RESOURCE_ID in json.dumps(r.get(resource_col), default=str)
+        ]
+        snapshot["resource_id_diagnostics"] = {
+            "rows_with_non_null_resource_ids": len(non_null),
+            f"rows_where_{RESOURCE_ID}_appears_anywhere_in_the_field": len(target_anywhere),
+            "sample_non_null_resource_ids": [
+                {"id": r.get("id"), "name": r.get("name"), "type": r.get("type"), resource_col: r.get(resource_col)}
+                for r in non_null[:10]
+            ],
+        }
     with open(DEBUG_SNAPSHOT_PATH, "w") as f:
         json.dump(snapshot, f, indent=2, sort_keys=True, default=str)
         f.write("\n")
