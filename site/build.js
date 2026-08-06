@@ -163,7 +163,9 @@ function talkTitle(t) {
   // there's no separate topic field, build the heading from chapter + date
   // instead, which is always available and never duplicates the write-up.
   if (t.topic) return t.topic;
-  if (t.chapter) return `TinkerTalk at ${t.chapter}${t.date ? ` — ${t.date}` : ""}`;
+  // Date isn't repeated here — it's already the first line of the meta row
+  // directly below the heading.
+  if (t.chapter) return `TinkerTalk at ${t.chapter}`;
   return "TinkerTalk — details pending";
 }
 
