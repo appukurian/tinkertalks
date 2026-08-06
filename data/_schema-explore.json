@@ -1,0 +1,3549 @@
+{
+  "database_id": 33,
+  "database_name": "TheHubDB",
+  "table_count": 35,
+  "tables": [
+    {
+      "description": "Post-event surveys collecting ratings and improvement suggestions from attendees.",
+      "display_name": "Attendee Feedback",
+      "estimated_row_count": 21195,
+      "fields": [
+        {
+          "base_type": "type/Integer",
+          "description": "The attendee record this feedback belongs to",
+          "display_name": "Attendee ID",
+          "name": "attendee_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When feedback was submitted",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this feedback is for",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Facilitator effectiveness rating (1-5)",
+          "display_name": "Facilitator Effectiveness",
+          "name": "facilitator_effectiveness",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Event organization rating (1-5)",
+          "display_name": "How Organized",
+          "name": "how_organized",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Improvement suggestions (free text)",
+          "display_name": "How To Improve",
+          "name": "how_to_improve",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this feedback",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Best aspects of the event (free text)",
+          "display_name": "Liked Most",
+          "name": "liked_most",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who submitted this feedback",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Networking opportunities rating (1-5)",
+          "display_name": "Networking Opportunities",
+          "name": "networking_opportunities",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Overall experience rating (1-5)",
+          "display_name": "Overall Experience",
+          "name": "overall_experience",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 65,
+      "name": "attendee_feedback",
+      "schema": "public"
+    },
+    {
+      "description": "Event registrations and check-ins. Tracks attendance, check-in times, team assignments, and venue selections.",
+      "display_name": "Attendees",
+      "estimated_row_count": 99528,
+      "fields": [
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the attendee has checked in",
+          "display_name": "Check In",
+          "name": "check_in",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who performed the check-in",
+          "display_name": "Check In By",
+          "name": "check_in_by",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When attendee checked in",
+          "display_name": "Check In Time",
+          "name": "check_in_time",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When registration occurred",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this registration is for",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether feedback has been submitted",
+          "display_name": "Feedback Completed",
+          "name": "feedback_completed",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this registration",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who registered",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Registration status. Values: registered, applied",
+          "display_name": "Registration Status",
+          "name": "registration_status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The team assigned to this attendee (for team events)",
+          "display_name": "Team ID",
+          "name": "team_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Unique ticket ID for QR codes",
+          "display_name": "Ticket ID",
+          "name": "ticket_id",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The venue selected by this attendee (for multi-venue events)",
+          "display_name": "Venue ID",
+          "name": "venue_id",
+          "semantic_type": "type/FK"
+        }
+      ],
+      "id": 47,
+      "name": "attendees",
+      "schema": "public"
+    },
+    {
+      "description": "Award category definitions grouping related awards (e.g., Monthly Awards, Achievement Badges).",
+      "display_name": "Award Groups",
+      "estimated_row_count": 3,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Group category classification",
+          "display_name": "Category",
+          "name": "category",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the group was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Group description and purpose",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this award group",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Group name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Display priority ordering",
+          "display_name": "Priority",
+          "name": "priority",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 68,
+      "name": "award_groups",
+      "schema": "public"
+    },
+    {
+      "description": "Monthly recognition awards for members or campuses (Campus of the Month, Maker of the Month, etc.).",
+      "display_name": "Awards",
+      "estimated_row_count": 19,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Award category",
+          "display_name": "Category",
+          "name": "category",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the award was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Award description and criteria",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Icon URL for unearned state",
+          "display_name": "Empty Icon",
+          "name": "empty_icon",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Icon URL for earned state",
+          "display_name": "Filled Icon",
+          "name": "filled_icon",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The award group this belongs to",
+          "display_name": "Group ID",
+          "name": "group_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this award",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who received this award (for individual awards)",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Display priority ordering",
+          "display_name": "Priority",
+          "name": "priority",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus this award is for (for campus awards)",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Award title",
+          "display_name": "Title",
+          "name": "title",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 75,
+      "name": "awards",
+      "schema": "public"
+    },
+    {
+      "description": "Event prerequisite tracking. Defines which events must be attended before registering for others.",
+      "display_name": "Dependent Events",
+      "estimated_row_count": 0,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the dependency was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The prerequisite event that must be attended first",
+          "display_name": "Dependent Event ID",
+          "name": "dependent_event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event that requires prerequisites",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this dependency",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": null
+        }
+      ],
+      "id": 72,
+      "name": "dependent_events",
+      "schema": "public"
+    },
+    {
+      "description": "Educational history for member profiles. Tracks schools, degrees, and enrollment periods.",
+      "display_name": "Education",
+      "estimated_row_count": 45901,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Degree or certification type",
+          "display_name": "Degree",
+          "name": "degree",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Date",
+          "description": "Graduation or end date",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Major or specialization",
+          "display_name": "Field Of Study",
+          "name": "field_of_study",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this education record",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the member is currently enrolled",
+          "display_name": "Is Current",
+          "name": "is_current",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is a school (vs college/university)",
+          "display_name": "Is School",
+          "name": "is_school",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Institution location",
+          "display_name": "Location",
+          "name": "location",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member this education belongs to",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Institution name",
+          "display_name": "School",
+          "name": "school",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Date",
+          "description": "Enrollment start date",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationDate"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus (if institution is a TinkerHub campus)",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Institution website URL",
+          "display_name": "URL",
+          "name": "url",
+          "semantic_type": "type/URL"
+        }
+      ],
+      "id": 77,
+      "name": "education",
+      "schema": "public"
+    },
+    {
+      "description": "Member enrollments in event groups/series. Tracks participation status.",
+      "display_name": "Event Group Subscriptions",
+      "estimated_row_count": 11459,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the subscription started",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event group subscribed to",
+          "display_name": "Group ID",
+          "name": "group_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this subscription",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who subscribed",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Subscription status (default: active)",
+          "display_name": "Status",
+          "name": "status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 81,
+      "name": "event_group_subscriptions",
+      "schema": "public"
+    },
+    {
+      "description": "Event series like Study Jams (multi-session learning cohorts). Supports subscriptions, projects, and Discord integration.",
+      "display_name": "Event Groups",
+      "estimated_row_count": 273,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Visibility level. Values: public, private",
+          "display_name": "Access Level",
+          "name": "access_level",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Series banner image URL",
+          "display_name": "Banner",
+          "name": "banner",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this group is restricted to a specific campus",
+          "display_name": "Campus Exclusive",
+          "name": "campus_exclusive",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the group was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Series description and objectives",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether a Discord reminder has been sent",
+          "display_name": "Discord Reminder Sent",
+          "name": "discord_reminder_sent",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Series end date",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this event group",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Relevant interest tags",
+          "display_name": "Interests",
+          "name": "interests",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this group is campus-specific",
+          "display_name": "Is Sub Org",
+          "name": "is_sub_org",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this group has limited seating",
+          "display_name": "Limited Seats",
+          "name": "limited_seats",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Event group or series name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this group involves ongoing project work",
+          "display_name": "Project Based",
+          "name": "project_based",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Deadline for series registration",
+          "display_name": "Registration Deadline",
+          "name": "registration_deadline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "Learning resources and materials",
+          "display_name": "Resources",
+          "name": "resources",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Resources \u2192 Data",
+          "name": "resources \u2192 data",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Total seat capacity",
+          "display_name": "Seats",
+          "name": "seats",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "Skills to be learned",
+          "display_name": "Skills",
+          "name": "skills",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Skills \u2192 Data",
+          "name": "skills \u2192 data",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Series start date",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Series status. Values: draft, active",
+          "display_name": "Status",
+          "name": "status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus this group belongs to (if campus-specific)",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Group type (e.g., study_jam, initiative)",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Short public ID for sharing",
+          "display_name": "Unique ID",
+          "name": "unique_id",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 83,
+      "name": "event_groups",
+      "schema": "public"
+    },
+    {
+      "description": "Event-partner links. Associates partners (sponsors/collaborators) with specific events.",
+      "display_name": "Event Partners",
+      "estimated_row_count": 463,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the partnership was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event in this partnership",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this event-partner link",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The partner in this partnership",
+          "display_name": "Partner ID",
+          "name": "partner_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 46,
+      "name": "event_partners",
+      "schema": "public"
+    },
+    {
+      "description": "Organizer post-event reports with ratings, photos, and materials. Tracks event success metrics.",
+      "display_name": "Event Report",
+      "estimated_row_count": 1765,
+      "fields": [
+        {
+          "base_type": "type/Integer",
+          "description": "Goal alignment rating (1-5)",
+          "display_name": "Alignment With Outcome",
+          "name": "alignment_with_outcome",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the report was submitted",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this report is for",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Facilitator effectiveness rating (1-5)",
+          "display_name": "Facilitator Effectiveness",
+          "name": "facilitator_effectiveness",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Organization quality self-rating (1-5)",
+          "display_name": "How Organized",
+          "name": "how_organized",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this report",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "List of presentation/material URLs",
+          "display_name": "Materials",
+          "name": "materials",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Materials \u2192 Data",
+          "name": "materials \u2192 data",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Networking opportunities rating (1-5)",
+          "display_name": "Networking Opportunities",
+          "name": "networking_opportunities",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The organizer record this report belongs to",
+          "display_name": "Organizer ID",
+          "name": "organizer_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The organizer who submitted this report",
+          "display_name": "Organizer Membership ID",
+          "name": "organizer_membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Overall event success rating (1-5)",
+          "display_name": "Overall Experience",
+          "name": "overall_experience",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "List of event photo URLs",
+          "display_name": "Photos",
+          "name": "photos",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Photos \u2192 Data",
+          "name": "photos \u2192 data",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the event was worth organizing",
+          "display_name": "Worth Organizing",
+          "name": "worth_organizing",
+          "semantic_type": "type/Category"
+        }
+      ],
+      "id": 79,
+      "name": "event_report",
+      "schema": "public"
+    },
+    {
+      "description": "Teams within team-based events. Supports join codes and venue assignments.",
+      "display_name": "Event Team",
+      "estimated_row_count": 9882,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the team was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this team belongs to",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this team",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Code for others to join the team",
+          "display_name": "Join Code",
+          "name": "join_code",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Maximum team size",
+          "display_name": "Max Members",
+          "name": "max_members",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Team name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The venue assigned to this team (for multi-venue events)",
+          "display_name": "Venue ID",
+          "name": "venue_id",
+          "semantic_type": "type/FK"
+        }
+      ],
+      "id": 67,
+      "name": "event_team",
+      "schema": "public"
+    },
+    {
+      "description": "Multiple venue support for events. Allows different locations with separate capacities and schedules.",
+      "display_name": "Event Venue",
+      "estimated_row_count": 244,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Physical venue address",
+          "display_name": "Address",
+          "name": "address",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the venue was added",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/DateTime",
+          "description": "Venue-specific event end time",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this venue belongs to",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this venue",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this venue has exclusive use",
+          "display_name": "Is Exclusive",
+          "name": "is_exclusive",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this venue has limited seating",
+          "display_name": "Is Limited Seats",
+          "name": "is_limited_seats",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this venue is at a campus location",
+          "display_name": "Is Sub Org",
+          "name": "is_sub_org",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Google Maps or location link",
+          "display_name": "Map URL",
+          "name": "map_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Venue name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Venue-specific registration deadline",
+          "display_name": "Registration Deadline",
+          "name": "registration_deadline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTime",
+          "description": "Venue-specific event start time",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus this venue is at (if campus venue)",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Maximum venue capacity",
+          "display_name": "Total Seats",
+          "name": "total_seats",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 76,
+      "name": "event_venue",
+      "schema": "public"
+    },
+    {
+      "description": "Event definitions with settings for virtual/physical, team-based, multi-venue, project submissions, and prizes.",
+      "display_name": "Events",
+      "estimated_row_count": 2357,
+      "fields": [
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether non-GitHub project links are accepted",
+          "display_name": "Allow Non Github Links",
+          "name": "allow_non_github_links",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Event banner image URL",
+          "display_name": "Banner",
+          "name": "banner",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event is restricted to a specific campus",
+          "display_name": "Campus Exclusive",
+          "name": "campus_exclusive",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event is restricted to specific member categories",
+          "display_name": "Category Exclusive",
+          "name": "category_exclusive",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the event was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Full event description",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Discord channel name",
+          "display_name": "Discord Channel Name",
+          "name": "discord_channel_name",
+          "semantic_type": "type/Source"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Discord channel URL",
+          "display_name": "Discord Channel URL",
+          "name": "discord_channel_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/*",
+          "description": "List of eligible membership category IDs",
+          "display_name": "Eligible Category Ids",
+          "name": "eligible_category_ids",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Event end date and time",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "External registration or info URL",
+          "display_name": "External Event URL",
+          "name": "external_event_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event appears on the homepage",
+          "display_name": "Featured",
+          "name": "featured",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event group or series this belongs to",
+          "display_name": "Group ID",
+          "name": "group_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether event group subscription is required",
+          "display_name": "Group Mandatory",
+          "name": "group_mandatory",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event offers prizes",
+          "display_name": "Has Prize",
+          "name": "has_prize",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this event",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Relevant interest tags",
+          "display_name": "Interests",
+          "name": "interests",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event has prerequisite events",
+          "display_name": "Is Dependent",
+          "name": "is_dependent",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event is hosted externally",
+          "display_name": "Is External",
+          "name": "is_external",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether registration requires an invitation",
+          "display_name": "Is Invite Only",
+          "name": "is_invite_only",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event has limited seating",
+          "display_name": "Is Limited Seats",
+          "name": "is_limited_seats",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event requires project submissions",
+          "display_name": "Is Project Based",
+          "name": "is_project_based",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is a TinkerSpace session",
+          "display_name": "Is Space",
+          "name": "is_space",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether projects are submitted as a team",
+          "display_name": "Is Team Project Submission",
+          "name": "is_team_project_submission",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is an online event",
+          "display_name": "Is Virtual",
+          "name": "is_virtual",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Physical venue name or address",
+          "display_name": "Location",
+          "name": "location",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Google Maps or venue link",
+          "display_name": "Map URL",
+          "name": "map_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Video call URL for virtual events",
+          "display_name": "Meet URL",
+          "name": "meet_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event has multiple physical venues",
+          "display_name": "Multiple Venue",
+          "name": "multiple_venue",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Event title",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Total seat capacity",
+          "display_name": "Number Of Seats",
+          "name": "number_of_seats",
+          "semantic_type": "type/Quantity"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The organization hosting this event",
+          "display_name": "Org ID",
+          "name": "org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether pre-event invitations are sent",
+          "display_name": "Pre Invite",
+          "name": "pre_invite",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Deadline for claiming prizes",
+          "display_name": "Prize Claim Deadline",
+          "name": "prize_claim_deadline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTime",
+          "description": "Deadline for project submissions",
+          "display_name": "Project Submission Deadline",
+          "name": "project_submission_deadline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Deadline for event registration",
+          "display_name": "Registration Deadline",
+          "name": "registration_deadline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the organizer report has been submitted",
+          "display_name": "Report Submitted",
+          "name": "report_submitted",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/*",
+          "description": null,
+          "display_name": "Resource Ids",
+          "name": "resource_ids",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Currently available seats",
+          "display_name": "Seats Available",
+          "name": "seats_available",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "Skills to be learned or required",
+          "display_name": "Skills",
+          "name": "skills",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Skills \u2192 Data",
+          "name": "skills \u2192 data",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Event start date and time",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Event status. Values: draft, published, paused, cancelled",
+          "display_name": "Status",
+          "name": "status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus hosting this event (for campus-only events)",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this event has team-based participation",
+          "display_name": "Team Event",
+          "name": "team_event",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Maximum team size",
+          "display_name": "Team Size",
+          "name": "team_size",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Event type. Values: Talk_Session, Meetup, Core_Team_Meeting, Learning_Program, Workshop, Hackathon, Project_Building_Program",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Short public ID for sharing",
+          "display_name": "Unique ID",
+          "name": "unique_id",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the event was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 50,
+      "name": "events",
+      "schema": "public"
+    },
+    {
+      "description": "Work and volunteer experience for member profiles. Tracks positions, companies, and tenure.",
+      "display_name": "Experience",
+      "estimated_row_count": 2775,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Company or organization name",
+          "display_name": "Company",
+          "name": "company",
+          "semantic_type": "type/Company"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Role responsibilities and achievements",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Date",
+          "description": "Position end date",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this experience record",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the member is currently in this position",
+          "display_name": "Is Current",
+          "name": "is_current",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Work location",
+          "display_name": "Location",
+          "name": "location",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member this experience belongs to",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Date",
+          "description": "Position start date",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationDate"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Job title or position",
+          "display_name": "Title",
+          "name": "title",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Experience type (work, volunteer, internship)",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Company website or LinkedIn URL",
+          "display_name": "URL",
+          "name": "url",
+          "semantic_type": "type/URL"
+        }
+      ],
+      "id": 73,
+      "name": "experience",
+      "schema": "public"
+    },
+    {
+      "description": "In-app banners and announcements. Displays contextual content on specific pages with scheduling support.",
+      "display_name": "Info Card",
+      "estimated_row_count": 1,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the card was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Scheduled end date for display",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this info card",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "Card content (title, body, action URL, etc.)",
+          "display_name": "Info",
+          "name": "info",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Info \u2192 Content",
+          "name": "info \u2192 content",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 Metadata \u2192 Banner",
+          "name": "info \u2192 metadata \u2192 banner",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 Metadata \u2192 SubTitle",
+          "name": "info \u2192 metadata \u2192 subTitle",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 Metadata \u2192 Title",
+          "name": "info \u2192 metadata \u2192 title",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 PrimaryAction \u2192 ButtonText",
+          "name": "info \u2192 primaryAction \u2192 buttonText",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 PrimaryAction \u2192 Icon",
+          "name": "info \u2192 primaryAction \u2192 icon",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 PrimaryAction \u2192 Subtitle",
+          "name": "info \u2192 primaryAction \u2192 subtitle",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 PrimaryAction \u2192 Title",
+          "name": "info \u2192 primaryAction \u2192 title",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Info \u2192 PrimaryAction \u2192 URL",
+          "name": "info \u2192 primaryAction \u2192 url",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Card display name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Target page for display (e.g., home, event_detail)",
+          "display_name": "Page Location",
+          "name": "page_location",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Scheduled start date for display",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Card state (e.g., active, inactive, draft)",
+          "display_name": "State",
+          "name": "state",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Card type (e.g., banner, tooltip, announcement)",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Content version identifier",
+          "display_name": "Unique ID",
+          "name": "unique_id",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 70,
+      "name": "info_card",
+      "schema": "public"
+    },
+    {
+      "description": "Vouching/referral system. Members invite others by phone number; tracks invitation status.",
+      "display_name": "Invitations",
+      "estimated_row_count": 35164,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the invitation was sent",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this invitation",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The membership created after invitation was accepted",
+          "display_name": "Invitee Membership ID",
+          "name": "invitee_membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Name of invited person",
+          "display_name": "Invitee Name",
+          "name": "invitee_name",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Phone number of invited person",
+          "display_name": "Invitee Phone Number",
+          "name": "invitee_phone_number",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who sent the invite",
+          "display_name": "Inviter Membership ID",
+          "name": "inviter_membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Invitation status. Values: pending, accepted",
+          "display_name": "Status",
+          "name": "status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 35,
+      "name": "invitations",
+      "schema": "public"
+    },
+    {
+      "description": "Member profiles with personal info, social links, skills, and preferences. Main record linking users to organizations.",
+      "display_name": "Memberships",
+      "estimated_row_count": 42594,
+      "fields": [
+        {
+          "base_type": "type/JSON",
+          "description": "Mailing address details",
+          "display_name": "Address",
+          "name": "address",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 AddressLine1",
+          "name": "address \u2192 addressLine1",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 AddressLine2",
+          "name": "address \u2192 addressLine2",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 District",
+          "name": "address \u2192 district",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 Landmark",
+          "name": "address \u2192 landmark",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 Pincode",
+          "name": "address \u2192 pincode",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 State",
+          "name": "address \u2192 state",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Profile picture URL",
+          "display_name": "Avatar",
+          "name": "avatar",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Member's self-description",
+          "display_name": "Bio",
+          "name": "bio",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Date of birth",
+          "display_name": "Birthday",
+          "name": "birthday",
+          "semantic_type": "type/Birthdate"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The membership category (Kutty Makers/Young Makers/Friends of TinkerHub)",
+          "display_name": "Category ID",
+          "name": "category_id",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the TinkerSpace check-in report has been submitted",
+          "display_name": "Checkin Report Submitted",
+          "name": "checkin_report_submitted",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Current employer name (for working professionals)",
+          "display_name": "Company Name",
+          "name": "company_name",
+          "semantic_type": "type/Company"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Academic course or program name",
+          "display_name": "Course",
+          "name": "course",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the member joined",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Discord user ID for community integration",
+          "display_name": "Discord ID",
+          "name": "discord_id",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Contact email address",
+          "display_name": "Email",
+          "name": "email",
+          "semantic_type": "type/Email"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the member receives notifications",
+          "display_name": "Enable Communication",
+          "name": "enable_communication",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Dietary preference for events",
+          "display_name": "Food Preference",
+          "name": "food_preference",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "GitHub profile link or username",
+          "display_name": "Github",
+          "name": "github",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Key that connects this profile to GitHub",
+          "display_name": "Github Token",
+          "name": "github_token",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this member",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Instagram handle",
+          "display_name": "Instagram",
+          "name": "instagram",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "List of member's interests",
+          "display_name": "Interests",
+          "name": "interests",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who invited this person (vouching system)",
+          "display_name": "Invited By",
+          "name": "invited_by",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the member has been approved by an admin",
+          "display_name": "Is Approved",
+          "name": "is_approved",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is a guest account with limited access",
+          "display_name": "Is Guest",
+          "name": "is_guest",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the member has completed onboarding",
+          "display_name": "Is Onboard",
+          "name": "is_onboard",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the profile is hidden from the public directory",
+          "display_name": "Is Private",
+          "name": "is_private",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether the member is currently a student",
+          "display_name": "Is Student",
+          "name": "is_student",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Current job type or category",
+          "display_name": "Job Type",
+          "name": "job_type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "LinkedIn profile link",
+          "display_name": "Linkedin",
+          "name": "linkedin",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Member's display name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The organization this member belongs to",
+          "display_name": "Org ID",
+          "name": "org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The role assigned to this member",
+          "display_name": "Role ID",
+          "name": "role_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Gender. Values: Male, Female",
+          "display_name": "Sex",
+          "name": "sex",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/JSON",
+          "description": "List of technical or professional skills",
+          "display_name": "Skills",
+          "name": "skills",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Array",
+          "description": null,
+          "display_name": "Skills \u2192 Data",
+          "name": "skills \u2192 data",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Account status (default: unknown)",
+          "display_name": "Status",
+          "name": "status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Academic specialization or branch",
+          "display_name": "Stream",
+          "name": "stream",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus or chapter this member belongs to",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Visual style for public profile page",
+          "display_name": "Theme",
+          "name": "theme",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "T-shirt size for swag. Values: S, M, L, XL, XXL",
+          "display_name": "Tshirt Size",
+          "name": "tshirt_size",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Twitter/X handle",
+          "display_name": "Twitter",
+          "name": "twitter",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Short public ID for sharing (e.g., TH-AB12CD)",
+          "display_name": "Unique ID",
+          "name": "unique_id",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the profile was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The user account this profile belongs to",
+          "display_name": "User ID",
+          "name": "user_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Chosen username for profile URL (tinkerhub.org/@username)",
+          "display_name": "Username",
+          "name": "username",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The claimed username for this member",
+          "display_name": "Username ID",
+          "name": "username_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Year of college admission",
+          "display_name": "Year Of Admission",
+          "name": "year_of_admission",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Expected or actual graduation year",
+          "display_name": "Year Of Graduation",
+          "name": "year_of_graduation",
+          "semantic_type": "type/Category"
+        }
+      ],
+      "id": 49,
+      "name": "memberships",
+      "schema": "public"
+    },
+    {
+      "description": "Job, internship, volunteering, and fellowship listings from partners. Supports eligibility criteria and applications.",
+      "display_name": "Opportunities",
+      "estimated_row_count": 137,
+      "fields": [
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is restricted to active campus members",
+          "display_name": "Active Campus Only",
+          "name": "active_campus_only",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Minimum activity participation for eligibility",
+          "display_name": "Activity Count",
+          "name": "activity_count",
+          "semantic_type": "type/Quantity"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Industry or skill category",
+          "display_name": "Category",
+          "name": "category",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Compensation details or range",
+          "display_name": "Compensation",
+          "name": "compensation",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the opportunity was posted",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Application deadline",
+          "display_name": "Deadline",
+          "name": "deadline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Full opportunity description and requirements",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Custom eligibility screening question",
+          "display_name": "Eligibility Question",
+          "name": "eligibility_question",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "External application URL",
+          "display_name": "External Link",
+          "name": "external_link",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is a featured listing",
+          "display_name": "Featured",
+          "name": "featured",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this opportunity",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether applications are handled externally",
+          "display_name": "Is External",
+          "name": "is_external",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is a volunteering opportunity",
+          "display_name": "Is Volunteering",
+          "name": "is_volunteering",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Work location",
+          "display_name": "Location",
+          "name": "location",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Work mode (remote, on-site, hybrid)",
+          "display_name": "Mode",
+          "name": "mode",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The partner organization offering this opportunity",
+          "display_name": "Partner ID",
+          "name": "partner_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Minimum projects required for eligibility",
+          "display_name": "Project Count",
+          "name": "project_count",
+          "semantic_type": "type/Quantity"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether a GitHub profile is required",
+          "display_name": "Require Github",
+          "name": "require_github",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is restricted to students",
+          "display_name": "Student Only",
+          "name": "student_only",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Minimum Study Jam attendance for eligibility",
+          "display_name": "Study Jam Count",
+          "name": "study_jam_count",
+          "semantic_type": "type/Quantity"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Task/assignment instructions for applicants",
+          "display_name": "Task Instructions",
+          "name": "task_instructions",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Resource URL for application task",
+          "display_name": "Task Resource",
+          "name": "task_resource",
+          "semantic_type": "type/Source"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Opportunity title",
+          "display_name": "Title",
+          "name": "title",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Opportunity type (job, internship, fellowship)",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Required graduation year for eligibility",
+          "display_name": "Year Of Graduation",
+          "name": "year_of_graduation",
+          "semantic_type": null
+        }
+      ],
+      "id": 33,
+      "name": "opportunities",
+      "schema": "public"
+    },
+    {
+      "description": "Event organizer assignments linking members to events. Supports multi-venue organizer roles.",
+      "display_name": "Organizers",
+      "estimated_row_count": 13095,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the assignment was made",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event being organized",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this organizer assignment",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this organizer is the primary host",
+          "display_name": "Is Host",
+          "name": "is_host",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": null,
+          "display_name": "Is Mentor",
+          "name": "is_mentor",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member assigned as organizer",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The venue assigned to this organizer (for multi-venue events)",
+          "display_name": "Venue ID",
+          "name": "venue_id",
+          "semantic_type": "type/FK"
+        }
+      ],
+      "id": 42,
+      "name": "organizers",
+      "schema": "public"
+    },
+    {
+      "description": "Parent organization (TinkerHub). Contains branding and organizational info.",
+      "display_name": "Orgs",
+      "estimated_row_count": 1,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Organization logo URL",
+          "display_name": "Avatar",
+          "name": "avatar",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Organization description",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this organization",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Organization name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Pattern for campus web addresses",
+          "display_name": "Wildcard",
+          "name": "wildcard",
+          "semantic_type": "type/Category"
+        }
+      ],
+      "id": 40,
+      "name": "orgs",
+      "schema": "public"
+    },
+    {
+      "description": "Contact persons at partner organizations. Stores name, title, and contact details.",
+      "display_name": "Partner Contacts",
+      "estimated_row_count": 20,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the contact was added",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Contact email",
+          "display_name": "Email",
+          "name": "email",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this contact",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Contact person name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The partner organization this contact works for",
+          "display_name": "Partner ID",
+          "name": "partner_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Contact phone number",
+          "display_name": "Phone",
+          "name": "phone",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Job title or position",
+          "display_name": "Title",
+          "name": "title",
+          "semantic_type": "type/Title"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 39,
+      "name": "partner_contacts",
+      "schema": "public"
+    },
+    {
+      "description": "Sponsor, opportunity provider, and event collaborator organizations. Reusable across events and opportunities.",
+      "display_name": "Partners",
+      "estimated_row_count": 211,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Partner logo URL",
+          "display_name": "Avatar",
+          "name": "avatar",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the partner was added",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Partner description and relationship details",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this partner",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Partner organization name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 37,
+      "name": "partners",
+      "schema": "public"
+    },
+    {
+      "description": "Event prize claim submissions. Attendees submit shipping details to receive prizes.",
+      "display_name": "Prize Claims",
+      "estimated_row_count": 1141,
+      "fields": [
+        {
+          "base_type": "type/JSON",
+          "description": "Shipping address details",
+          "display_name": "Address",
+          "name": "address",
+          "semantic_type": "type/SerializedJSON"
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 AddressLine1",
+          "name": "address \u2192 addressLine1",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 AddressLine2",
+          "name": "address \u2192 addressLine2",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 District",
+          "name": "address \u2192 district",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 Landmark",
+          "name": "address \u2192 landmark",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 Pincode",
+          "name": "address \u2192 pincode",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Address \u2192 State",
+          "name": "address \u2192 state",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The attendee claiming the prize",
+          "display_name": "Attendee ID",
+          "name": "attendee_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the claim was submitted",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event the prize is from",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this prize claim",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "T-shirt size for swag prizes. Values: S, M, L, XL, XXL",
+          "display_name": "Tshirt Size",
+          "name": "tshirt_size",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 78,
+      "name": "prize_claims",
+      "schema": "public"
+    },
+    {
+      "description": "Project team members with display ordering. Links members to projects they contributed to.",
+      "display_name": "Project Collaborators",
+      "estimated_row_count": 13750,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the collaborator was added",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this collaborator record",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who is a collaborator",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The project this collaborator works on",
+          "display_name": "Project ID",
+          "name": "project_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Display order position",
+          "display_name": "Sort Order",
+          "name": "sort_order",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 80,
+      "name": "project_collaborators",
+      "schema": "public"
+    },
+    {
+      "description": "Project milestone tracking with ordered stages. Tracks progress through development lifecycle.",
+      "display_name": "Project Stages",
+      "estimated_row_count": 7698,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the stage was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Stage completion date",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this stage",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Stage name (e.g., Planning, Development, Testing)",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The project this stage belongs to",
+          "display_name": "Project ID",
+          "name": "project_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Display/progression order",
+          "display_name": "Stage Order",
+          "name": "stage_order",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Stage start date",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 69,
+      "name": "project_stages",
+      "schema": "public"
+    },
+    {
+      "description": "Hackathon/event submissions and portfolio projects. Supports collaboration, stages, and verification.",
+      "display_name": "Projects",
+      "estimated_row_count": 7569,
+      "fields": [
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this project is accepting collaborators",
+          "display_name": "Can Collaborate",
+          "name": "can_collaborate",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Project categories or tags",
+          "display_name": "Categories",
+          "name": "categories",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Project cover/banner image URL",
+          "display_name": "Cover Image",
+          "name": "cover_image",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the project was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Full project description and details",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Project completion date",
+          "display_name": "End Date",
+          "name": "end_date",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this project was created for an event",
+          "display_name": "Event Based",
+          "name": "event_based",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event group this project belongs to (for series-based projects)",
+          "display_name": "Event Group ID",
+          "name": "event_group_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this project was submitted for",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The team that created this project (for team event submissions)",
+          "display_name": "Event Team ID",
+          "name": "event_team_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/BigInteger",
+          "description": null,
+          "display_name": "Github Repo ID",
+          "name": "github_repo_id",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this project",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this project is completed",
+          "display_name": "Is Completed",
+          "name": "is_completed",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Project title",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this project is open source",
+          "display_name": "Open Source",
+          "name": "open_source",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Live project or demo URL",
+          "display_name": "Project URL",
+          "name": "project_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Source code repository URL",
+          "display_name": "Source Code URL",
+          "name": "source_code_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "Project start date",
+          "display_name": "Start Date",
+          "name": "start_date",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Review status. Values: Review Pending, Accepted",
+          "display_name": "Status",
+          "name": "status",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Short project description",
+          "display_name": "Tagline",
+          "name": "tagline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Project type classification",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this project has been verified by an admin",
+          "display_name": "Verified",
+          "name": "verified",
+          "semantic_type": "type/Category"
+        }
+      ],
+      "id": 43,
+      "name": "projects",
+      "schema": "public"
+    },
+    {
+      "description": "User role definitions for access control.",
+      "display_name": "Roles",
+      "estimated_row_count": 5,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the role was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this role",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Role name. Values: SuperAdmin, Admin, CampusAdmin, Staff, Maker",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 45,
+      "name": "roles",
+      "schema": "public"
+    },
+    {
+      "description": "Database migration tracking. Records applied migrations and their state.",
+      "display_name": "Schema Migrations",
+      "estimated_row_count": 1,
+      "fields": [
+        {
+          "base_type": "type/Boolean",
+          "description": null,
+          "display_name": "Dirty",
+          "name": "dirty",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/BigInteger",
+          "description": null,
+          "display_name": "Version",
+          "name": "version",
+          "semantic_type": "type/PK"
+        }
+      ],
+      "id": 38,
+      "name": "schema_migrations",
+      "schema": "public"
+    },
+    {
+      "description": "TinkerSpace (24/7 makerspace in Kochi) check-in/out records via The Hub app. Tracks presence and project work.",
+      "display_name": "Space Check In",
+      "estimated_row_count": 76652,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the member checked in",
+          "display_name": "Check In Time",
+          "name": "check_in_time",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the member checked out",
+          "display_name": "Check Out Time",
+          "name": "check_out_time",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this check-in",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Boolean",
+          "description": "Whether this is a mentor visit",
+          "display_name": "Is Mentor",
+          "name": "is_mentor",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who checked in",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The project being worked on",
+          "display_name": "Project ID",
+          "name": "project_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Visit purpose category",
+          "display_name": "Purpose",
+          "name": "purpose",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "What the member is working on (free text)",
+          "display_name": "Working On",
+          "name": "working_on",
+          "semantic_type": null
+        }
+      ],
+      "id": 48,
+      "name": "space_check_in",
+      "schema": "public"
+    },
+    {
+      "description": "Manager assessments of member activity at TinkerSpace (24/7 makerspace in Kochi). Tracks work status and engagement.",
+      "display_name": "Space Manager Report",
+      "estimated_row_count": 419,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Brief summary of member's work",
+          "display_name": "Brief Info",
+          "name": "brief_info",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the report was submitted",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Donor relationship status",
+          "display_name": "Donor State",
+          "name": "donor_state",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this report",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member being assessed",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Additional manager comments",
+          "display_name": "Remarks",
+          "name": "remarks",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The manager who submitted this report",
+          "display_name": "Submitted By",
+          "name": "submitted_by",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Current work status assessment",
+          "display_name": "Work Status",
+          "name": "work_status",
+          "semantic_type": "type/Category"
+        }
+      ],
+      "id": 66,
+      "name": "space_manager_report",
+      "schema": "public"
+    },
+    {
+      "description": "Event speaker profiles. Can be linked to existing members or created for external speakers.",
+      "display_name": "Speaker",
+      "estimated_row_count": 0,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Profile picture URL",
+          "display_name": "Avatar",
+          "name": "avatar",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the speaker was added",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The event this speaker is presenting at",
+          "display_name": "Event ID",
+          "name": "event_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this speaker",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member profile (optional for external speakers)",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Speaker display name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Short bio or role description",
+          "display_name": "Tagline",
+          "name": "tagline",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": null
+        }
+      ],
+      "id": 82,
+      "name": "speaker",
+      "schema": "public"
+    },
+    {
+      "description": "Campus leadership assignments by year. Tracks leads and co-leads for each academic year.",
+      "display_name": "Sub Org Admins",
+      "estimated_row_count": 755,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the assignment was made",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this leadership assignment",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member assigned as leader",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Leadership role. Values: Lead",
+          "display_name": "Role",
+          "name": "role",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The campus this assignment is for",
+          "display_name": "Sub Org ID",
+          "name": "sub_org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Academic year of leadership tenure",
+          "display_name": "Year",
+          "name": "year",
+          "semantic_type": "type/Category"
+        }
+      ],
+      "id": 71,
+      "name": "sub_org_admins",
+      "schema": "public"
+    },
+    {
+      "description": "Campuses and chapters under TinkerHub. Contains campus details, leadership, and institutional contacts.",
+      "display_name": "Sub Orgs",
+      "estimated_row_count": 1297,
+      "fields": [
+        {
+          "base_type": "type/Text",
+          "description": "Physical address",
+          "display_name": "Address",
+          "name": "address",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Short name used in web addresses",
+          "display_name": "Alias",
+          "name": "alias",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Campus logo URL",
+          "display_name": "Avatar",
+          "name": "avatar",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the campus was added",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Campus description",
+          "display_name": "Description",
+          "name": "description",
+          "semantic_type": "type/Description"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "District location",
+          "display_name": "District",
+          "name": "district",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Faculty coordinator email",
+          "display_name": "Faculty Email",
+          "name": "faculty_email",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Faculty coordinator name",
+          "display_name": "Faculty Name",
+          "name": "faculty_name",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Faculty Phone",
+          "name": "faculty_phone",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this campus",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Instagram handle",
+          "display_name": "Instagram",
+          "name": "instagram",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "LinkedIn page URL",
+          "display_name": "Linkedin",
+          "name": "linkedin",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who manages this campus",
+          "display_name": "Manager ID",
+          "name": "manager_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Google Maps link",
+          "display_name": "Map URL",
+          "name": "map_url",
+          "semantic_type": "type/URL"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Campus or chapter name",
+          "display_name": "Name",
+          "name": "name",
+          "semantic_type": "type/Name"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The parent organization (TinkerHub) this campus belongs to",
+          "display_name": "Org ID",
+          "name": "org_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Institution head's email",
+          "display_name": "Principal Email",
+          "name": "principal_email",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Institution head's name",
+          "display_name": "Principal Name",
+          "name": "principal_name",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": null,
+          "display_name": "Principal Phone",
+          "name": "principal_phone",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Campus operational state. Values: unknown, active",
+          "display_name": "State",
+          "name": "state",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Campus type (e.g., college, school)",
+          "display_name": "Type",
+          "name": "type",
+          "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Campus website URL",
+          "display_name": "Website",
+          "name": "website",
+          "semantic_type": null
+        }
+      ],
+      "id": 41,
+      "name": "sub_orgs",
+      "schema": "public"
+    },
+    {
+      "description": "Reserved usernames ensuring uniqueness across the platform.",
+      "display_name": "Username",
+      "estimated_row_count": 9310,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the username was reserved",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this username reservation",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "The member who owns this username",
+          "display_name": "Membership ID",
+          "name": "membership_id",
+          "semantic_type": "type/FK"
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "The reserved username",
+          "display_name": "Username",
+          "name": "username",
+          "semantic_type": null
+        }
+      ],
+      "id": 74,
+      "name": "username",
+      "schema": "public"
+    },
+    {
+      "description": "Login records for phone-based authentication. Links to memberships for organization profiles.",
+      "display_name": "Users",
+      "estimated_row_count": 48812,
+      "fields": [
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was created",
+          "display_name": "Created At",
+          "name": "created_at",
+          "semantic_type": "type/CreationTimestamp"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": "Unique identifier for this user",
+          "display_name": "ID",
+          "name": "id",
+          "semantic_type": "type/PK"
+        },
+        {
+          "base_type": "type/Text",
+          "description": "Phone number used for login",
+          "display_name": "Phone Number",
+          "name": "phone_number",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/DateTimeWithLocalTZ",
+          "description": "When the record was last changed",
+          "display_name": "Updated At",
+          "name": "updated_at",
+          "semantic_type": "type/UpdatedTimestamp"
+        }
+      ],
+      "id": 44,
+      "name": "users",
+      "schema": "public"
+    }
+  ]
+}
