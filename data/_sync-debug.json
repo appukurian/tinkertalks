@@ -51,7 +51,6 @@
     "resource_ids"
   ],
   "guessed_mapping": {
-    "chapter": "name",
     "date": "start_date",
     "resource_id": "resource_ids"
   },
@@ -85,7 +84,7 @@
       "seats_available",
       "number_of_seats"
     ],
-    "note": "Structural/non-PII columns only, up to 5 rows (matched TinkerTalks if any were found, otherwise the general table), so the chapter/date mapping can be confirmed or fixed without another blind guess. Delete this block from the script once the mapping is confirmed.",
+    "note": "Structural/non-PII columns only, up to 5 rows (matched TinkerTalks if any were found, otherwise the general table).",
     "rows": [
       {
         "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/ai web temp TV.png1716107403900191459",
@@ -194,7 +193,18 @@
       }
     ]
   },
-  "synced_at": "2026-08-06T14:10:41.964725+00:00",
+  "synced_at": "2026-08-06T14:26:22.936039+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2357
+  "total_rows_in_table": 2357,
+  "type_value_counts": {
+    "Bootcamp": 155,
+    "Core_Team_Meeting": 180,
+    "Hackathon": 68,
+    "Learning_Program": 1017,
+    "Makeathon": 1,
+    "Meetup": 490,
+    "Project_Building_Program": 2,
+    "Talk_Session": 252,
+    "Workshop": 192
+  }
 }
