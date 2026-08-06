@@ -10,6 +10,13 @@ on:
         description: "Dry run: print columns + sample rows, don't write files"
         type: boolean
         default: false
+  # Also run once whenever main changes — mainly so the very first push runs
+  # the sync automatically (no dev environment here could reach Metabase to
+  # test it directly). Safe to remove later if the extra runs on every PR
+  # merge are unwanted; it's idempotent and won't loop (GitHub doesn't
+  # re-trigger workflows from pushes made with the default GITHUB_TOKEN).
+  push:
+    branches: ["main"]
 
 permissions:
   contents: write
@@ -36,7 +43,7 @@ jobs:
         run: |
           git config user.name "tinkertalks-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/talks
+          git add data/talks data/_sync-debug.json
           if git diff --cached --quiet; then
             echo "No new or updated TinkerTalks today."
           else

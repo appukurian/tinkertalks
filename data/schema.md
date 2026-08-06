@@ -14,16 +14,10 @@ duplicates.
   "synced_at": "2026-08-05T02:30:00Z",
 
   // Best-guess fields mapped from the events table by the sync script.
-  // Column names in Metabase weren't confirmed yet (see scripts/fetch_metabase.py
-  // MAPPING_HINTS) — until confirmed, "source" below is the ground truth and
-  // these may be null or wrong.
+  // Column names in Metabase weren't confirmed until the first live sync —
+  // check data/_sync-debug.json if these look wrong.
   "chapter": "TKM College of Engineering",
   "date": "2026-08-04",
-
-  // Raw row from Metabase, untouched, so nothing is lost if the guessed
-  // mapping above is wrong. Keys are whatever column names the events table
-  // actually uses.
-  "source": { "...": "..." },
 
   // Editorial fields — owned by whoever claims + documents the talk via the
   // CMS. The daily sync never overwrites this block once it exists.
@@ -37,6 +31,18 @@ duplicates.
   "photos": []                       // paths under /admin/uploads/, added via the CMS media picker
 }
 ```
+
+## Why there's no raw `source` field
+
+This repo is **public** — it supports fork-based pull requests from 70+
+campus chapters without adding each one as a collaborator (see
+`admin/config.yml`'s `open_authoring: true`). The `events` table in Metabase
+may hold columns that were never meant to be public (phone numbers, internal
+notes, etc.), so the sync script only ever writes the specific fields
+TinkerTalks is meant to show (`chapter`, `date`) — never the whole row.
+`data/_sync-debug.json` records the real column *names* it saw (schema
+shape only, no cell values) so the mapping can be checked and corrected
+without ever committing raw data.
 
 ## Status lifecycle
 

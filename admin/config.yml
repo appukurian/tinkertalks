@@ -15,6 +15,11 @@ backend:
   # straight to main. This is what turns "claim + document a TinkerTalk"
   # into a pull request Kurian reviews and merges.
   publish_mode: editorial_workflow
+  # 70+ campus chapters need to be able to submit without each one being
+  # added as a GitHub collaborator on this repo. open_authoring makes Decap
+  # fork the repo on the volunteer's behalf and PR from their fork instead —
+  # this only works because the repo is public.
+  open_authoring: true
 
 media_folder: "admin/uploads"
 public_folder: "/admin/uploads"
@@ -39,14 +44,6 @@ collections:
       - { name: "synced_at", label: "Last synced", widget: "datetime", required: false }
       - { name: "chapter", label: "Chapter / Campus", widget: "string", required: false }
       - { name: "date", label: "Date", widget: "datetime", required: false }
-      # Raw row from Metabase — kept as an opaque hidden field so it round-trips
-      # untouched when a chapter volunteer saves their edits. Decap can't render
-      # a form for an object with unknown/variable keys, so it's not shown in
-      # the UI; view/edit it directly in the JSON file on GitHub if needed.
-      - name: "source"
-        label: "Raw synced data (hidden, do not edit)"
-        widget: "hidden"
-        required: false
       - name: "status"
         label: "Status"
         widget: "select"
