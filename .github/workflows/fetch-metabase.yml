@@ -38,12 +38,22 @@ jobs:
           DEBUG: ${{ github.event.inputs.debug == 'true' && '1' || '' }}
         run: python scripts/fetch_metabase.py
 
+      # One-shot schema survey (see scripts/explore_schema.py) — not part of
+      # the daily sync logic, just riding along so it runs somewhere with
+      # real internet access. Schema (table/column names) only, no row data.
+      - name: Survey full Metabase schema
+        if: ${{ github.event.inputs.debug != 'true' }}
+        env:
+          METABASE_URL: https://metabase.tinkerhub.org
+          METABASE_API_KEY: ${{ secrets.METABASE_API_KEY }}
+        run: python scripts/explore_schema.py
+
       - name: Commit new/updated talks
         if: ${{ github.event.inputs.debug != 'true' }}
         run: |
           git config user.name "tinkertalks-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/talks data/_sync-debug.json
+          git add data/talks data/_sync-debug.json data/_schema-explore.json
           if git diff --cached --quiet; then
             echo "No new or updated TinkerTalks today."
           else
