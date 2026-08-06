@@ -39,30 +39,30 @@ collections:
     create: false
     delete: false
     identifier_field: id
-    summary: "{{chapter}} — {{topic}} ({{date}})"
+    summary: "{{chapter}} ({{date}}) — {{status}}"
+    # Chapter, date, location, speaker, participant counts, and photos all
+    # already exist elsewhere in TinkerHub's data — the event record itself,
+    # plus the event report every chapter already files after a session
+    # (linked by event id; see the TODO in scripts/fetch_metabase.py once
+    # that table is wired in). Asking a volunteer to retype any of that here
+    # would just be duplicate data entry with a chance to go stale. The ONE
+    # thing that genuinely doesn't exist anywhere else is what was actually
+    # discussed — so that's the only field a claimant sees.
     fields:
-      - { name: "id", label: "ID", widget: "string", required: true }
-      - { name: "resource_id", label: "Resource ID", widget: "string", required: false }
-      - { name: "metabase_row_id", label: "Metabase row id", widget: "number", required: false }
-      - { name: "synced_at", label: "Last synced", widget: "datetime", required: false }
-      - { name: "chapter", label: "Chapter / Campus", widget: "string", required: false }
-      - { name: "date", label: "Date", widget: "datetime", required: false }
-      - name: "status"
-        label: "Status"
-        widget: "select"
-        options: ["unclaimed", "claimed", "documented"]
-        default: "claimed"
-      - { name: "claimed_by", label: "Claimed by (your GitHub username)", widget: "string", required: false }
-      - { name: "claimed_at", label: "Claimed at", widget: "datetime", required: false }
-      - { name: "topic", label: "What was the TinkerTalk about?", widget: "string", required: false }
-      - { name: "speaker", label: "Speaker / facilitator", widget: "string", required: false }
-      - { name: "location", label: "Location", widget: "string", required: false }
+      - { name: "id", label: "ID", widget: "hidden" }
+      - { name: "resource_id", label: "Resource ID", widget: "hidden" }
+      - { name: "metabase_row_id", label: "Metabase row id", widget: "hidden" }
+      - { name: "synced_at", label: "Last synced", widget: "hidden" }
+      - { name: "chapter", label: "Chapter / Campus", widget: "hidden" }
+      - { name: "date", label: "Date", widget: "hidden" }
+      - { name: "status", label: "Status", widget: "hidden" }
+      - { name: "claimed_by", label: "Claimed by", widget: "hidden" }
+      - { name: "claimed_at", label: "Claimed at", widget: "hidden" }
+      - { name: "topic", label: "Topic", widget: "hidden" }
+      - { name: "speaker", label: "Speaker / facilitator", widget: "hidden" }
+      - { name: "location", label: "Location", widget: "hidden" }
+      - { name: "photos", label: "Photos", widget: "hidden" }
       - name: "discussion_notes"
-        label: "What was discussed"
+        label: "What exactly did you discuss in this TinkerTalk?"
         widget: "text"
-        required: false
-      - name: "photos"
-        label: "Photos"
-        widget: "list"
-        field: { label: "Photo", name: "photo", widget: "image" }
-        required: false
+        required: true

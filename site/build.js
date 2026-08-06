@@ -12,12 +12,24 @@ const TALKS_DIR = path.join(ROOT, "data", "talks");
 const DIST_DIR = path.join(ROOT, "site", "dist");
 const ASSETS_SRC = path.join(ROOT, "site", "assets");
 
+// The CMS claim form only ever asks for one thing (discussion_notes) — a
+// volunteer never manually flips a status dropdown, since that'd be one more
+// thing to forget. So "documented" is derived from data, not trusted from
+// whatever the `status` field happened to say last: the daily Metabase sync
+// writes "unclaimed", and this is the only place that ever changes it.
+function effectiveStatus(t) {
+  if (t.discussion_notes && String(t.discussion_notes).trim()) return "documented";
+  if (t.claimed_by) return "claimed";
+  return t.status || "unclaimed";
+}
+
 function loadTalks() {
   if (!fs.existsSync(TALKS_DIR)) return [];
   return fs
     .readdirSync(TALKS_DIR)
     .filter((f) => f.endsWith(".json"))
     .map((f) => JSON.parse(fs.readFileSync(path.join(TALKS_DIR, f), "utf8")))
+    .map((t) => ({ ...t, status: effectiveStatus(t) }))
     .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 }
 
@@ -69,13 +81,25 @@ function statCard(value, label) {
   return `<div class="stat"><div class="stat-value">${esc(value)}</div><div class="stat-label">${esc(label)}</div></div>`;
 }
 
+// The claim form no longer asks for a "topic" title — it only asks what was
+// discussed. Most talks won't have `topic` set, so fall back to a snippet of
+// the discussion itself rather than showing "Untitled" on every card.
+function talkTitle(t) {
+  if (t.topic) return t.topic;
+  if (t.discussion_notes) {
+    const s = String(t.discussion_notes).trim();
+    return s.length > 70 ? s.slice(0, 70).trimEnd() + "…" : s;
+  }
+  return "TinkerTalk — details pending";
+}
+
 function talkCardDocumented(t) {
   const cover = t.photos && t.photos[0] ? `<img class="thumb" src="${esc(t.photos[0])}" alt="">` : `<div class="thumb thumb-placeholder"></div>`;
   return `<a class="talk-card" href="/talks/${esc(t.id)}/">
   ${cover}
   <div class="talk-card-body">
     <div class="talk-chapter">${esc(t.chapter || "Unknown chapter")}</div>
-    <div class="talk-topic">${esc(t.topic || "Untitled TinkerTalk")}</div>
+    <div class="talk-topic">${esc(talkTitle(t))}</div>
     <div class="talk-date">${esc(t.date || "")}</div>
   </div>
 </a>`;
@@ -146,21 +170,26 @@ ${
 
 function buildDetail(t) {
   const photos = (t.photos || [])
-    .map((p) => `<img src="${esc(p)}" alt="Photo from ${esc(t.topic || "this TinkerTalk")}">`)
+    .map((p) => `<img src="${esc(p)}" alt="Photo from ${esc(talkTitle(t))}">`)
     .join("\n");
+  // Chapter/date always shown (sync-owned, always present). Speaker/location
+  // are shown only when set — today that's never (they're meant to come from
+  // linking the event report, not yet wired in), so an empty row would just
+  // read as broken rather than "not collected yet".
+  const metaRows = [["Chapter", t.chapter], ["Date", t.date], ["Speaker", t.speaker], ["Location", t.location]]
+    .filter(([, value]) => value)
+    .map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`)
+    .join("\n    ");
   const body = `
 <article class="talk-detail">
-  <h1>${esc(t.topic || "Untitled TinkerTalk")}</h1>
+  <h1>${esc(talkTitle(t))}</h1>
   <dl class="talk-meta">
-    <div><dt>Chapter</dt><dd>${esc(t.chapter || "Unknown")}</dd></div>
-    <div><dt>Date</dt><dd>${esc(t.date || "Unknown")}</dd></div>
-    <div><dt>Speaker</dt><dd>${esc(t.speaker || "Unknown")}</dd></div>
-    <div><dt>Location</dt><dd>${esc(t.location || "Unknown")}</dd></div>
+    ${metaRows}
   </dl>
   ${t.discussion_notes ? `<h2>What was discussed</h2><p>${esc(t.discussion_notes)}</p>` : ""}
   ${photos ? `<h2>Photos</h2><div class="photo-grid">${photos}</div>` : ""}
 </article>`;
-  return layout({ title: t.topic || t.id, active: "/talks/", body });
+  return layout({ title: talkTitle(t), active: "/talks/", body });
 }
 
 function write(filePath, content) {
