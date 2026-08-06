@@ -1,0 +1,16 @@
+{
+  "id": "dummy-2",
+  "resource_id": "875A",
+  "metabase_row_id": null,
+  "synced_at": null,
+  "chapter": "SCMS School of Engineering, Karukutty",
+  "date": "2026-08-05",
+  "status": "documented",
+  "claimed_by": "achuthspai",
+  "claimed_at": "2026-08-05T14:00:00Z",
+  "topic": "p5.js — creative coding basics",
+  "speaker": "Achuth S Pai",
+  "location": "SCMS Innovation Cell",
+  "discussion_notes": "Live-coded a generative pattern in p5.js from a blank sketch — random walk, then noise-based motion, then let makers tweak parameters on their own laptops. Good turnout from first-years who'd never touched a canvas API before.",
+  "photos": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "dummy-1",
+  "resource_id": "875A",
+  "metabase_row_id": null,
+  "synced_at": null,
+  "chapter": "TKM College of Engineering",
+  "date": "2026-08-04",
+  "status": "documented",
+  "claimed_by": "appukurian",
+  "claimed_at": "2026-08-05T09:00:00Z",
+  "topic": "Raster vs Vector graphics",
+  "speaker": "Ananya Menon",
+  "location": "TKM Design Lab, Kollam",
+  "discussion_notes": "Walked through how raster and vector images actually work under the hood, then did a live side-by-side in Photoshop and Figma — zooming into a logo to show pixelation vs. clean scaling. Ended with a quick group exercise redrawing a campus poster as vector shapes.",
+  "photos": []
+}

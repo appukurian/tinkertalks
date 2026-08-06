@@ -118,7 +118,7 @@ main {
   background: #eee;
 }
 
-.thumb-placeholder {
+.talk-card .thumb-placeholder {
   background: linear-gradient(135deg, #ff6b35 0%, #f7c59f 100%);
 }
 
