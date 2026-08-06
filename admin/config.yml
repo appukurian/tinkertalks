@@ -54,14 +54,21 @@ collections:
       - { name: "metabase_row_id", label: "Metabase row id", widget: "hidden" }
       - { name: "synced_at", label: "Last synced", widget: "hidden" }
       - { name: "chapter", label: "Chapter / Campus", widget: "hidden" }
+      - { name: "district", label: "District", widget: "hidden" }
       - { name: "date", label: "Date", widget: "hidden" }
       - { name: "status", label: "Status", widget: "hidden" }
       - { name: "claimed_by", label: "Claimed by", widget: "hidden" }
       - { name: "claimed_at", label: "Claimed at", widget: "hidden" }
       - { name: "topic", label: "Topic", widget: "hidden" }
-      - { name: "speaker", label: "Speaker / facilitator", widget: "hidden" }
-      - { name: "location", label: "Location", widget: "hidden" }
+      - { name: "speakers", label: "Speakers", widget: "hidden" }
+      - { name: "venue", label: "Venue", widget: "hidden" }
       - { name: "photos", label: "Photos", widget: "hidden" }
+      - { name: "materials", label: "Materials", widget: "hidden" }
+      - { name: "worth_organizing", label: "Worth organizing", widget: "hidden" }
+      - { name: "ratings", label: "Report ratings", widget: "hidden" }
+      - { name: "participant_count", label: "Participant count", widget: "hidden" }
+      - { name: "checked_in_count", label: "Checked-in count", widget: "hidden" }
+      - { name: "feedback", label: "Feedback", widget: "hidden" }
       - name: "discussion_notes"
         label: "What exactly did you discuss in this TinkerTalk?"
         widget: "text"

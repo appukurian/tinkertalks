@@ -94,6 +94,65 @@ function statCard(value, label) {
   return `<div class="stat"><div class="stat-value">${esc(value)}</div><div class="stat-label">${esc(label)}</div></div>`;
 }
 
+// Reach numbers (chapters/districts/participants run) reflect every synced
+// TinkerTalk regardless of claim status — a session happened whether or not
+// anyone's written it up yet. Quality numbers (ratings, "recently
+// documented") only make sense for talks someone actually documented.
+function districtBreakdown(talks) {
+  const counts = new Map();
+  for (const t of talks) {
+    if (!t.district) continue;
+    counts.set(t.district, (counts.get(t.district) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([district, count]) => ({ district, count }));
+}
+
+function monthlyTrend(talks) {
+  const counts = new Map();
+  for (const t of talks) {
+    if (!t.date) continue;
+    const month = String(t.date).slice(0, 7); // "YYYY-MM"
+    counts.set(month, (counts.get(month) || 0) + 1);
+  }
+  return [...counts.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([month, count]) => ({ month, count }));
+}
+
+function monthLabel(ym) {
+  const [y, m] = ym.split("-").map(Number);
+  return new Date(y, m - 1, 1).toLocaleDateString("en-US", { month: "short" });
+}
+
+// Single-hue magnitude bars — one series, so no legend and no categorical
+// palette needed (see dataviz skill: sequential/one-hue is the safe default
+// for "compare magnitude"; a legend only earns its place at 2+ series).
+function barChart(rows, { labelKey, valueKey, unit = "" }) {
+  const max = Math.max(1, ...rows.map((r) => r[valueKey]));
+  return rows
+    .map(
+      (r) => `<div class="bar-row">
+    <div class="bar-label">${esc(r[labelKey])}</div>
+    <div class="bar-track"><div class="bar-fill" style="width:${Math.round((r[valueKey] / max) * 100)}%"></div></div>
+    <div class="bar-value">${esc(r[valueKey])}${unit}</div>
+  </div>`
+    )
+    .join("\n  ");
+}
+
+function trendChart(rows) {
+  const max = Math.max(1, ...rows.map((r) => r.count));
+  return `<div class="trend-chart">
+  ${rows
+    .map(
+      (r) => `<div class="trend-col">
+    <div class="trend-value">${esc(r.count)}</div>
+    <div class="trend-bar" style="height:${Math.round((r.count / max) * 100)}%"></div>
+    <div class="trend-label">${esc(monthLabel(r.month))}</div>
+  </div>`
+    )
+    .join("\n  ")}
+</div>`;
+}
+
 // The claim form no longer asks for a "topic" title — it only asks what was
 // discussed. Most talks won't have `topic` set, so fall back to a snippet of
 // the discussion itself rather than showing "Untitled" on every card.
@@ -132,7 +191,14 @@ function talkCardUnclaimed(t) {
 function buildIndex(talks, theme) {
   const documented = talks.filter((t) => t.status === "documented");
   const chapters = new Set(talks.map((t) => t.chapter).filter(Boolean));
+  const districts = new Set(talks.map((t) => t.district).filter(Boolean));
   const unclaimedCount = talks.filter((t) => t.status === "unclaimed").length;
+  const totalParticipants = talks.reduce((sum, t) => sum + (t.participant_count || 0), 0);
+
+  const ratedTalks = talks.filter((t) => t.feedback && typeof t.feedback.avg_overall_experience === "number");
+  const avgRating = ratedTalks.length
+    ? (ratedTalks.reduce((sum, t) => sum + t.feedback.avg_overall_experience, 0) / ratedTalks.length).toFixed(1)
+    : null;
 
   const themeSection = theme
     ? `<section class="theme-banner">
@@ -147,18 +213,47 @@ function buildIndex(talks, theme) {
 </section>`
     : "";
 
+  const districts_rows = districtBreakdown(talks);
+  const trend_rows = monthlyTrend(talks);
+
+  const impactSection = `
+<section class="impact">
+  <h2>Reach across Kerala</h2>
+  <p class="section-lede">TinkerTalks run every week, in campuses across the state — this is the scale of that, updated automatically from TinkerHub's own event records.</p>
+  <div class="stats">
+    ${statCard(talks.length, "TinkerTalks run")}
+    ${statCard(chapters.size, "Campus chapters")}
+    ${statCard(districts.size, "Districts reached")}
+    ${statCard(totalParticipants.toLocaleString("en-IN"), "Total participants")}
+    ${avgRating ? statCard(avgRating + " / 5", "Avg. attendee rating") : ""}
+  </div>
+  ${
+    districts_rows.length
+      ? `<div class="impact-charts">
+    <div class="chart-card">
+      <h3>TinkerTalks by district</h3>
+      ${barChart(districts_rows, { labelKey: "district", valueKey: "count" })}
+    </div>
+    ${
+      trend_rows.length > 1
+        ? `<div class="chart-card">
+      <h3>Momentum, month over month</h3>
+      ${trendChart(trend_rows)}
+    </div>`
+        : ""
+    }
+  </div>`
+      : ""
+  }
+</section>`;
+
   const body = `
 <section class="hero">
   <h1>TinkerTalks, all in one place</h1>
-  <p>Every campus chapter runs a weekly TinkerTalk. This is where they get documented and shared across all of TinkerHub.</p>
+  <p>Every campus chapter runs a weekly TinkerTalk. This is where they get documented and shared across all of TinkerHub — and where partners and sponsors can see the reach for themselves.</p>
 </section>
 ${themeSection}
-<section class="stats">
-  ${statCard(talks.length, "TinkerTalks tracked")}
-  ${statCard(documented.length, "Documented")}
-  ${statCard(chapters.size, "Chapters represented")}
-  ${statCard(unclaimedCount, "Awaiting a claim")}
-</section>
+${impactSection}
 <section>
   <h2>Recently documented</h2>
   <div class="talk-grid">
@@ -199,22 +294,63 @@ function buildDetail(t) {
   const photos = (t.photos || [])
     .map((p) => `<img src="${esc(p)}" alt="Photo from ${esc(talkTitle(t))}">`)
     .join("\n");
-  // Chapter/date always shown (sync-owned, always present). Speaker/location
-  // are shown only when set — today that's never (they're meant to come from
-  // linking the event report, not yet wired in), so an empty row would just
-  // read as broken rather than "not collected yet".
-  const metaRows = [["Chapter", t.chapter], ["Date", t.date], ["Speaker", t.speaker], ["Location", t.location]]
+
+  const speakerNames = (t.speakers || []).map((s) => s.name).filter(Boolean).join(", ");
+  const speakerTaglines = (t.speakers || []).map((s) => s.tagline).filter(Boolean).join(" · ");
+
+  // Chapter/date/district always shown when present (sync-owned). Speaker and
+  // venue only show when the linked speaker/event_venue/event_report tables
+  // actually had a row for this event — an empty row would read as broken
+  // rather than "not filed yet".
+  const metaRows = [
+    ["Chapter", t.chapter],
+    ["District", t.district],
+    ["Date", t.date],
+    ["Speaker", speakerNames || null],
+    ["Venue", t.venue ? t.venue.name : null],
+  ]
     .filter(([, value]) => value)
     .map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`)
     .join("\n    ");
+
+  const participationSection =
+    t.participant_count || (t.feedback && t.feedback.count)
+      ? `<section class="participation">
+    ${t.participant_count ? statCard(t.participant_count, "Attended") : ""}
+    ${
+      t.feedback && typeof t.feedback.avg_overall_experience === "number"
+        ? statCard(t.feedback.avg_overall_experience + " / 5", "Avg. rating (" + t.feedback.count + " responses)")
+        : ""
+    }
+  </section>`
+      : "";
+
+  const materialsSection =
+    t.materials && t.materials.length
+      ? `<h2>Materials</h2><ul class="materials-list">${t.materials
+          .map((m) => `<li><a href="${esc(m)}" target="_blank" rel="noopener">${esc(m)}</a></li>`)
+          .join("")}</ul>`
+      : "";
+
+  const venueSection =
+    t.venue && (t.venue.address || t.venue.map_url)
+      ? `<p class="venue-detail">${esc(t.venue.address || "")}${
+          t.venue.map_url ? ` — <a href="${esc(t.venue.map_url)}" target="_blank" rel="noopener">map</a>` : ""
+        }</p>`
+      : "";
+
   const body = `
 <article class="talk-detail">
   <h1>${esc(talkTitle(t))}</h1>
+  ${speakerTaglines ? `<p class="speaker-tagline">${esc(speakerTaglines)}</p>` : ""}
   <dl class="talk-meta">
     ${metaRows}
   </dl>
+  ${venueSection}
+  ${participationSection}
   ${t.discussion_notes ? `<h2>What was discussed</h2><p>${esc(t.discussion_notes)}</p>` : ""}
   ${photos ? `<h2>Photos</h2><div class="photo-grid">${photos}</div>` : ""}
+  ${materialsSection}
 </article>`;
   return layout({ title: talkTitle(t), active: "/talks/", body });
 }

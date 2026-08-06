@@ -4,13 +4,39 @@
   "metabase_row_id": null,
   "synced_at": null,
   "chapter": "TKM College of Engineering",
+  "district": "Kollam",
   "date": "2026-08-04",
   "status": "documented",
   "claimed_by": "appukurian",
   "claimed_at": "2026-08-05T09:00:00Z",
   "topic": "Raster vs Vector graphics",
-  "speaker": "Ananya Menon",
-  "location": "TKM Design Lab, Kollam",
+  "speakers": [
+    { "name": "Ananya Menon", "tagline": "ML Engineer, Product Studio", "avatar": null }
+  ],
+  "venue": {
+    "name": "TKM Design Lab",
+    "address": "TKM College of Engineering, Kollam",
+    "map_url": "https://maps.google.com/?q=TKM+College+of+Engineering",
+    "total_seats": 40
+  },
   "discussion_notes": "Walked through how raster and vector images actually work under the hood, then did a live side-by-side in Photoshop and Figma — zooming into a logo to show pixelation vs. clean scaling. Ended with a quick group exercise redrawing a campus poster as vector shapes.",
-  "photos": []
+  "photos": [],
+  "materials": ["https://slides.example.com/raster-vs-vector"],
+  "worth_organizing": true,
+  "ratings": {
+    "overall_experience": 5,
+    "facilitator_effectiveness": 5,
+    "how_organized": 4,
+    "networking_opportunities": 3,
+    "alignment_with_outcome": 4
+  },
+  "participant_count": 34,
+  "checked_in_count": 29,
+  "feedback": {
+    "count": 22,
+    "avg_overall_experience": 4.6,
+    "avg_facilitator_effectiveness": 4.7,
+    "avg_how_organized": 4.3,
+    "avg_networking_opportunities": 3.8
+  }
 }

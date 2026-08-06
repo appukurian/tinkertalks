@@ -4,13 +4,20 @@
   "metabase_row_id": null,
   "synced_at": null,
   "chapter": "Government Engineering College, Thrissur",
+  "district": "Thrissur",
   "date": "2026-08-06",
   "status": "claimed",
   "claimed_by": "shreyajayaraj",
   "claimed_at": "2026-08-06T08:00:00Z",
   "topic": null,
-  "speaker": null,
-  "location": null,
+  "speakers": [],
+  "venue": null,
   "discussion_notes": null,
-  "photos": []
+  "photos": [],
+  "materials": [],
+  "worth_organizing": null,
+  "ratings": null,
+  "participant_count": 19,
+  "checked_in_count": 17,
+  "feedback": null
 }
