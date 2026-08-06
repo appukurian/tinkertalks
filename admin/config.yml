@@ -9,7 +9,7 @@
 
 backend:
   name: github
-  repo: REPO_OWNER/REPO_NAME
+  repo: appukurian/tinkertalks
   branch: main
   # Editorial workflow: saving an entry opens a PR instead of committing
   # straight to main. This is what turns "claim + document a TinkerTalk"
