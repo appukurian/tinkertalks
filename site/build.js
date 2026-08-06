@@ -157,6 +157,21 @@ function trendChart(rows) {
 // discussed. Most talks won't have `topic` set, so fall back to a snippet of
 // the discussion itself rather than showing "Untitled" on every card.
 function talkTitle(t) {
+  // Previously fell back to a truncated snippet of discussion_notes — but
+  // that meant the same sentence showed twice on a detail page (once cut
+  // short as the heading, once in full under "What was discussed"). Since
+  // there's no separate topic field, build the heading from chapter + date
+  // instead, which is always available and never duplicates the write-up.
+  if (t.topic) return t.topic;
+  if (t.chapter) return `TinkerTalk at ${t.chapter}${t.date ? ` — ${t.date}` : ""}`;
+  return "TinkerTalk — details pending";
+}
+
+// Card teaser: a snippet of what was discussed is a fine preview here, since
+// the full text only appears on the detail page (a different page) — unlike
+// talkTitle() on the detail page itself, this never duplicates against the
+// full body shown right below it.
+function talkPreview(t) {
   if (t.topic) return t.topic;
   if (t.discussion_notes) {
     const s = String(t.discussion_notes).trim();
@@ -171,7 +186,7 @@ function talkCardDocumented(t) {
   ${cover}
   <div class="talk-card-body">
     <div class="talk-chapter">${esc(t.chapter || "Unknown chapter")}</div>
-    <div class="talk-topic">${esc(talkTitle(t))}</div>
+    <div class="talk-topic">${esc(talkPreview(t))}</div>
     <div class="talk-date">${esc(t.date || "")}</div>
   </div>
 </a>`;
