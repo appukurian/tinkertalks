@@ -58,7 +58,96 @@
   "matched_rows": 0,
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_filter": "875A",
-  "synced_at": "2026-08-06T11:51:27.378300+00:00",
+  "sample_values_while_debugging": {
+    "columns": [
+      "id",
+      "name",
+      "type",
+      "start_date",
+      "end_date",
+      "org_id",
+      "sub_org_id",
+      "unique_id",
+      "status",
+      "resource_ids",
+      "location",
+      "is_virtual"
+    ],
+    "note": "Structural/non-PII columns only, up to 5 rows (matched TinkerTalks if any were found, otherwise the general table), so the chapter/date mapping can be confirmed or fixed without another blind guess. Delete this block from the script once the mapping is confirmed.",
+    "rows": [
+      {
+        "end_date": "2024-05-22T20:00:00+05:30",
+        "id": 269,
+        "is_virtual": false,
+        "location": "Tinkerspace, 21/258, Cusat.P.O, Punnekkattumoola, Seaport - Airport Rd, Vidya Nagar Colony, Thrikkakara, Kalamassery, Kochi, Kerala 682022",
+        "name": "AI Wednesday",
+        "org_id": 1,
+        "resource_ids": null,
+        "start_date": "2024-05-22T18:00:00+05:30",
+        "status": "published",
+        "sub_org_id": null,
+        "type": "Talk_Session",
+        "unique_id": "CKV2M35OON"
+      },
+      {
+        "end_date": "2025-09-26T13:30:00+05:30",
+        "id": 2055,
+        "is_virtual": false,
+        "location": "ICCSCEM ",
+        "name": "Not just another orientation",
+        "org_id": 1,
+        "resource_ids": null,
+        "start_date": "2025-09-26T12:30:00+05:30",
+        "status": "published",
+        "sub_org_id": 2917,
+        "type": "Talk_Session",
+        "unique_id": "UUAG7S062E"
+      },
+      {
+        "end_date": "2024-08-05T12:45:00+05:30",
+        "id": 318,
+        "is_virtual": false,
+        "location": "RIT CSE Cafe",
+        "name": "First Meetup",
+        "org_id": 1,
+        "resource_ids": null,
+        "start_date": "2024-08-05T12:00:00+05:30",
+        "status": "published",
+        "sub_org_id": 2160,
+        "type": "Core_Team_Meeting",
+        "unique_id": "Q1TISZ5VKZ"
+      },
+      {
+        "end_date": "2024-06-22T12:00:00+05:30",
+        "id": 276,
+        "is_virtual": false,
+        "location": "Tinkerspace, 21/258, Cusat.P.O, Punnekkattumoola, Seaport - Airport Rd, Vidya Nagar Colony, Thrikkakara, Kalamassery, Kochi, Kerala 682022",
+        "name": "Laravel Community Meetup",
+        "org_id": 1,
+        "resource_ids": null,
+        "start_date": "2024-06-22T10:00:00+05:30",
+        "status": "published",
+        "sub_org_id": null,
+        "type": "Meetup",
+        "unique_id": "THMK4RKQ6A"
+      },
+      {
+        "end_date": "2025-07-25T16:00:00+05:30",
+        "id": 1486,
+        "is_virtual": false,
+        "location": "Mukkam",
+        "name": "\u0d38\u0d4a\u0d31\u0d2a\u0d31\u0d1a\u0d4d\u0d1a\u0d3f\u0d7d: An Orientation Program",
+        "org_id": 1,
+        "resource_ids": null,
+        "start_date": "2025-07-25T15:00:00+05:30",
+        "status": "published",
+        "sub_org_id": 1710,
+        "type": "Meetup",
+        "unique_id": "O7I50F6PAC"
+      }
+    ]
+  },
+  "synced_at": "2026-08-06T12:00:17.508924+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2000
+  "total_rows_in_table": 2357
 }
