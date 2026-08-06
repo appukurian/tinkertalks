@@ -1,0 +1,68 @@
+# Decap CMS config — https://decapcms.org/docs/configuration-options/
+#
+# TODO once the repo exists: replace REPO_OWNER/REPO_NAME below, and enable
+# GitHub login for this repo in Netlify (Site settings → Identity is NOT
+# needed for this — Decap's git-gateway isn't used here; instead we use the
+# plain "github" backend below, which needs Netlify's OAuth provider enabled
+# under Site settings → Access control → OAuth, or a self-hosted
+# decap-proxy). See README.md for the exact steps.
+
+backend:
+  name: github
+  repo: REPO_OWNER/REPO_NAME
+  branch: main
+  # Editorial workflow: saving an entry opens a PR instead of committing
+  # straight to main. This is what turns "claim + document a TinkerTalk"
+  # into a pull request Kurian reviews and merges.
+  publish_mode: editorial_workflow
+
+media_folder: "admin/uploads"
+public_folder: "/admin/uploads"
+
+# Chapters should only ever edit a TinkerTalk that the daily Metabase sync
+# already created — not invent new ones from thin air — so entry creation
+# is turned off. New files only ever come from scripts/fetch_metabase.py.
+collections:
+  - name: "talks"
+    label: "TinkerTalks"
+    folder: "data/talks"
+    extension: "json"
+    format: "json"
+    create: false
+    delete: false
+    identifier_field: id
+    summary: "{{chapter}} — {{topic}} ({{date}})"
+    fields:
+      - { name: "id", label: "ID", widget: "string", required: true }
+      - { name: "resource_id", label: "Resource ID", widget: "string", required: false }
+      - { name: "metabase_row_id", label: "Metabase row id", widget: "number", required: false }
+      - { name: "synced_at", label: "Last synced", widget: "datetime", required: false }
+      - { name: "chapter", label: "Chapter / Campus", widget: "string", required: false }
+      - { name: "date", label: "Date", widget: "datetime", required: false }
+      # Raw row from Metabase — kept as an opaque hidden field so it round-trips
+      # untouched when a chapter volunteer saves their edits. Decap can't render
+      # a form for an object with unknown/variable keys, so it's not shown in
+      # the UI; view/edit it directly in the JSON file on GitHub if needed.
+      - name: "source"
+        label: "Raw synced data (hidden, do not edit)"
+        widget: "hidden"
+        required: false
+      - name: "status"
+        label: "Status"
+        widget: "select"
+        options: ["unclaimed", "claimed", "documented"]
+        default: "claimed"
+      - { name: "claimed_by", label: "Claimed by (your GitHub username)", widget: "string", required: false }
+      - { name: "claimed_at", label: "Claimed at", widget: "datetime", required: false }
+      - { name: "topic", label: "What was the TinkerTalk about?", widget: "string", required: false }
+      - { name: "speaker", label: "Speaker / facilitator", widget: "string", required: false }
+      - { name: "location", label: "Location", widget: "string", required: false }
+      - name: "discussion_notes"
+        label: "What was discussed"
+        widget: "text"
+        required: false
+      - name: "photos"
+        label: "Photos"
+        widget: "list"
+        field: { label: "Photo", name: "photo", widget: "image" }
+        required: false

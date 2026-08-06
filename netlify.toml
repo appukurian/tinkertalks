@@ -1,0 +1,8 @@
+[build]
+  command = "node site/build.js"
+  publish = "site/dist"
+
+# Deploy previews (created automatically for every PR, including the ones
+# Decap CMS opens via the editorial workflow) get their own preview URL —
+# nothing extra to configure for that, it's a Netlify default once the repo
+# is connected as a site.

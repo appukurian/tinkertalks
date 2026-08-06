@@ -1,0 +1,45 @@
+name: Sync TinkerTalks from Metabase
+
+on:
+  schedule:
+    # 02:33 UTC = 08:03 IST, daily
+    - cron: "33 2 * * *"
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Dry run: print columns + sample rows, don't write files"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch TinkerTalks from Metabase
+        env:
+          METABASE_URL: https://metabase.tinkerhub.org
+          METABASE_API_KEY: ${{ secrets.METABASE_API_KEY }}
+          DEBUG: ${{ github.event.inputs.debug == 'true' && '1' || '' }}
+        run: python scripts/fetch_metabase.py
+
+      - name: Commit new/updated talks
+        if: ${{ github.event.inputs.debug != 'true' }}
+        run: |
+          git config user.name "tinkertalks-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/talks
+          if git diff --cached --quiet; then
+            echo "No new or updated TinkerTalks today."
+          else
+            git commit -m "sync: TinkerTalks from Metabase ($(date -u +%Y-%m-%d))"
+            git push
+          fi
