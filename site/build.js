@@ -183,8 +183,11 @@ function talkPreview(t) {
 }
 
 function talkCardDocumented(t) {
+  // The same first photo from the event report doubles as this card's
+  // thumbnail and the cover shown at the top of the detail page's photo
+  // gallery — one image, two places, no separate upload.
   const cover = t.photos && t.photos[0] ? `<img class="thumb" src="${esc(t.photos[0])}" alt="">` : `<div class="thumb thumb-placeholder"></div>`;
-  return `<a class="talk-card" href="/talks/${esc(t.id)}/">
+  return `<a class="talk-card" href="/talks/${esc(t.id)}/" data-chapter="${esc(t.chapter || "")}" data-district="${esc(t.district || "")}">
   ${cover}
   <div class="talk-card-body">
     <div class="talk-chapter">${esc(t.chapter || "Unknown chapter")}</div>
@@ -280,14 +283,62 @@ ${impactSection}
   return layout({ title: "Home", active: "/", body });
 }
 
+function filterSelect(id, label, allLabel, options) {
+  return `<label class="filter-field">
+  ${esc(label)}
+  <select id="${id}">
+    <option value="">${esc(allLabel)}</option>
+    ${options.map((o) => `<option value="${esc(o)}">${esc(o)}</option>`).join("\n    ")}
+  </select>
+</label>`;
+}
+
+// Plain vanilla JS, no build step or framework — matches the rest of the
+// site. Filters by chapter and/or district together (AND), reading the
+// data-chapter/data-district attributes written onto each card above.
+const FILTER_SCRIPT = `
+<script>
+(function () {
+  var chapterSel = document.getElementById("chapterFilter");
+  var districtSel = document.getElementById("districtFilter");
+  var cards = document.querySelectorAll("#talk-grid .talk-card");
+  var emptyMsg = document.getElementById("filter-empty");
+  function apply() {
+    var chapter = chapterSel.value, district = districtSel.value;
+    var visible = 0;
+    cards.forEach(function (c) {
+      var match = (!chapter || c.dataset.chapter === chapter) && (!district || c.dataset.district === district);
+      c.style.display = match ? "" : "none";
+      if (match) visible++;
+    });
+    if (emptyMsg) emptyMsg.style.display = visible === 0 ? "" : "none";
+  }
+  chapterSel.addEventListener("change", apply);
+  districtSel.addEventListener("change", apply);
+})();
+</script>`;
+
 function buildAllTalks(talks) {
   const documented = talks.filter((t) => t.status === "documented");
+  const chapters = [...new Set(documented.map((t) => t.chapter).filter(Boolean))].sort();
+  const districts = [...new Set(documented.map((t) => t.district).filter(Boolean))].sort();
+
+  const filters = documented.length
+    ? `<div class="filter-row">
+  ${filterSelect("chapterFilter", "Chapter", "All chapters", chapters)}
+  ${filterSelect("districtFilter", "District", "All districts", districts)}
+</div>`
+    : "";
+
   const body = `
 <h1>All TinkerTalks</h1>
 <p>Every TinkerTalk that's happened, with its write-up, across every campus chapter.</p>
-<div class="talk-grid">
+${filters}
+<div class="talk-grid" id="talk-grid">
   ${documented.map(talkCardDocumented).join("\n  ") || "<p>Nothing to show yet.</p>"}
-</div>`;
+</div>
+${documented.length ? `<p id="filter-empty" style="display:none; color: var(--muted);">No TinkerTalks match that filter yet.</p>` : ""}
+${documented.length ? FILTER_SCRIPT : ""}`;
   return layout({ title: "All TinkerTalks", active: "/talks/", body });
 }
 

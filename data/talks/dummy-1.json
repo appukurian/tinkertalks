@@ -20,7 +20,10 @@
     "total_seats": 40
   },
   "discussion_notes": "Walked through how raster and vector images actually work under the hood, then did a live side-by-side in Photoshop and Figma — zooming into a logo to show pixelation vs. clean scaling. Ended with a quick group exercise redrawing a campus poster as vector shapes.",
-  "photos": [],
+  "photos": [
+    "https://picsum.photos/seed/tinkertalk1a/800/500",
+    "https://picsum.photos/seed/tinkertalk1b/800/500"
+  ],
   "materials": ["https://slides.example.com/raster-vs-vector"],
   "worth_organizing": true,
   "ratings": {
