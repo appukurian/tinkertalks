@@ -16,8 +16,16 @@ Env vars required:
   METABASE_API_KEY   the mb_... key (passed as the x-api-key header)
 
 Env vars optional:
+  METABASE_DATABASE_ID default 33   (database the `events` table lives in)
   METABASE_TABLE_ID    default 50   (the `events` table)
   METABASE_RESOURCE_ID default 875A (the resource_id that marks a TinkerTalk)
+
+Note: an earlier version of this script called POST /api/table/:id/query,
+which 404'd against the real instance (that route doesn't exist / isn't
+exposed the way assumed). Switched to POST /api/dataset with an explicit MBQL
+query — the same request shape Metabase's own UI uses under the hood, and
+the one the original question link (database 33, source-table 50) decoded
+to — which is the stable, documented way to run a table query via the API.
   DEBUG=1              print columns + sample rows to the Action log and
                         exit without writing or committing anything. Use for
                         manual troubleshooting (values only reach the log,
@@ -37,12 +45,14 @@ re-introducing a raw passthrough.
 import json
 import os
 import sys
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
 METABASE_URL = os.environ.get("METABASE_URL", "https://metabase.tinkerhub.org").rstrip("/")
 METABASE_API_KEY = os.environ.get("METABASE_API_KEY")
-TABLE_ID = os.environ.get("METABASE_TABLE_ID", "50")
+DATABASE_ID = int(os.environ.get("METABASE_DATABASE_ID", "33"))
+TABLE_ID = int(os.environ.get("METABASE_TABLE_ID", "50"))
 RESOURCE_ID = os.environ.get("METABASE_RESOURCE_ID", "875A")
 DEBUG = os.environ.get("DEBUG") == "1"
 
@@ -68,12 +78,25 @@ PUBLIC_FIELDS = ("chapter", "date")
 
 
 def fetch_table_rows(table_id):
-    url = f"{METABASE_URL}/api/table/{table_id}/query"
-    req = urllib.request.Request(url, method="POST")
+    # Same request shape as Metabase's own UI (and the question link this was
+    # bootstrapped from): a plain MBQL query against source-table, run
+    # through the general /api/dataset endpoint.
+    url = f"{METABASE_URL}/api/dataset"
+    body = json.dumps({
+        "database": DATABASE_ID,
+        "type": "query",
+        "query": {"source-table": table_id},
+    }).encode("utf-8")
+    req = urllib.request.Request(url, method="POST", data=body)
     req.add_header("x-api-key", METABASE_API_KEY)
     req.add_header("Content-Type", "application/json")
-    with urllib.request.urlopen(req, data=b"{}", timeout=30) as resp:
-        payload = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            payload = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body_text = e.read().decode("utf-8", errors="replace")
+        print(f"Metabase returned HTTP {e.code}: {body_text}", file=sys.stderr)
+        raise
     data = payload.get("data", payload)
     cols = [c.get("name") or c.get("display_name") for c in data["cols"]]
     rows = data["rows"]
