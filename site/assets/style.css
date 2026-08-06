@@ -67,6 +67,49 @@ main {
   margin: 0 auto;
 }
 
+.theme-banner {
+  background: linear-gradient(135deg, #fff5ee 0%, #ffe8d6 100%);
+  border: 1px solid #ffd9b8;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.theme-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.theme-banner h2 {
+  margin: 0.15rem 0 0.5rem;
+}
+
+.theme-banner p {
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+
+.theme-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.theme-topics li {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

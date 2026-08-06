@@ -1,0 +1,15 @@
+{
+  "_comment": "Manually updated once per cycle from the TinkerTalks theme doc in Drive (title: 'TinkerTalks — <Theme> (Cycle N: <months>)'). The site build can't log into Google Drive, so this is the hand-maintained source of truth for the landing page's current-theme section — update this file each time a new cycle's doc is published.",
+  "cycle": "Cycle 1",
+  "period": "Aug–Sep 2026",
+  "theme": "Tech + Design",
+  "blurb": "This cycle's TinkerTalks explore where technology and design meet — from raster vs. vector fundamentals to generative coding, 3D/spatial tools, PCB and enclosure design, and the ethics of dark patterns. Chapters pick what fits their campus; not every topic gets covered everywhere.",
+  "sample_topics": [
+    "Raster vs Vector — Photoshop/Illustrator vs Figma/Inkscape",
+    "p5.js — creative coding basics",
+    "3D Design & Blender",
+    "PCB Design (KiCad/EasyEDA)",
+    "Dark Patterns in app design",
+    "Kerala's Design Heritage"
+  ]
+}

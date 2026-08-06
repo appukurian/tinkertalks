@@ -9,8 +9,21 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const TALKS_DIR = path.join(ROOT, "data", "talks");
+const THEME_PATH = path.join(ROOT, "data", "theme.json");
 const DIST_DIR = path.join(ROOT, "site", "dist");
 const ASSETS_SRC = path.join(ROOT, "site", "assets");
+
+// The current cycle's theme lives in a Google Doc, not Metabase — the build
+// has no way to log into Drive, so this is hand-maintained (see the comment
+// inside data/theme.json). Missing file just means no theme section shows.
+function loadTheme() {
+  if (!fs.existsSync(THEME_PATH)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(THEME_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
 
 // The CMS claim form only ever asks for one thing (discussion_notes) — a
 // volunteer never manually flips a status dropdown, since that'd be one more
@@ -116,16 +129,30 @@ function talkCardUnclaimed(t) {
 </div>`;
 }
 
-function buildIndex(talks) {
+function buildIndex(talks, theme) {
   const documented = talks.filter((t) => t.status === "documented");
   const chapters = new Set(talks.map((t) => t.chapter).filter(Boolean));
   const unclaimedCount = talks.filter((t) => t.status === "unclaimed").length;
+
+  const themeSection = theme
+    ? `<section class="theme-banner">
+  <div class="theme-label">${esc(theme.cycle)}${theme.period ? ` · ${esc(theme.period)}` : ""}</div>
+  <h2>This cycle's theme: ${esc(theme.theme)}</h2>
+  ${theme.blurb ? `<p>${esc(theme.blurb)}</p>` : ""}
+  ${
+    Array.isArray(theme.sample_topics) && theme.sample_topics.length
+      ? `<ul class="theme-topics">${theme.sample_topics.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`
+      : ""
+  }
+</section>`
+    : "";
 
   const body = `
 <section class="hero">
   <h1>TinkerTalks, all in one place</h1>
   <p>Every campus chapter runs a weekly TinkerTalk. This is where they get documented and shared across all of TinkerHub.</p>
 </section>
+${themeSection}
 <section class="stats">
   ${statCard(talks.length, "TinkerTalks tracked")}
   ${statCard(documented.length, "Documented")}
@@ -211,8 +238,9 @@ function copyDir(src, dest) {
 function main() {
   fs.rmSync(DIST_DIR, { recursive: true, force: true });
   const talks = loadTalks();
+  const theme = loadTheme();
 
-  write(path.join(DIST_DIR, "index.html"), buildIndex(talks));
+  write(path.join(DIST_DIR, "index.html"), buildIndex(talks, theme));
   write(path.join(DIST_DIR, "talks", "index.html"), buildAllTalks(talks));
   write(path.join(DIST_DIR, "claim", "index.html"), buildClaimPage(talks));
 

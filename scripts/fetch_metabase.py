@@ -88,6 +88,13 @@ PUBLIC_FIELDS = ("chapter", "date")
 SAFE_SAMPLE_COLUMNS = [
     "id", "name", "type", "start_date", "end_date", "org_id", "sub_org_id",
     "unique_id", "status", "resource_ids", "location", "is_virtual",
+    # Added to check what's actually showcase-able on the landing/detail
+    # pages beyond what the claim form collects: description/banner could
+    # mean richer content already exists per-event without anyone retyping
+    # it; interests/skills are tags; report_submitted flags which events
+    # already have a filed report worth pulling more data from later.
+    "description", "banner", "interests", "skills", "report_submitted",
+    "seats_available", "number_of_seats",
 ]
 
 
