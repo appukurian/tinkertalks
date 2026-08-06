@@ -250,14 +250,14 @@ function buildIndex(talks, theme) {
   const body = `
 <section class="hero">
   <h1>TinkerTalks, all in one place</h1>
-  <p>Every campus chapter runs a weekly TinkerTalk. This is where they get documented and shared across all of TinkerHub — and where partners and sponsors can see the reach for themselves.</p>
+  <p>TinkerTalks are community talk sessions run every week by TinkerHub's campus chapters, all across Kerala. Each bimonthly cycle sets a theme, and every chapter picks topics within it to run as a session on their own campus — this is where all of those come together.</p>
 </section>
 ${themeSection}
 ${impactSection}
 <section>
-  <h2>Recently documented</h2>
+  <h2>Recently held TinkerTalks</h2>
   <div class="talk-grid">
-    ${documented.slice(0, 9).map(talkCardDocumented).join("\n    ") || "<p>Nothing documented yet — be the first to <a href=\"/claim/\">claim a TinkerTalk</a>.</p>"}
+    ${documented.slice(0, 9).map(talkCardDocumented).join("\n    ") || "<p>Nothing to show yet — be the first to <a href=\"/claim/\">write up a TinkerTalk</a>.</p>"}
   </div>
 </section>`;
   return layout({ title: "Home", active: "/", body });
@@ -267,8 +267,9 @@ function buildAllTalks(talks) {
   const documented = talks.filter((t) => t.status === "documented");
   const body = `
 <h1>All TinkerTalks</h1>
+<p>Every TinkerTalk that's happened, with its write-up, across every campus chapter.</p>
 <div class="talk-grid">
-  ${documented.map(talkCardDocumented).join("\n  ") || "<p>No documented TinkerTalks yet.</p>"}
+  ${documented.map(talkCardDocumented).join("\n  ") || "<p>Nothing to show yet.</p>"}
 </div>`;
   return layout({ title: "All TinkerTalks", active: "/talks/", body });
 }
@@ -278,7 +279,7 @@ function buildClaimPage(talks) {
   const claimed = talks.filter((t) => t.status === "claimed");
   const body = `
 <h1>Claim a TinkerTalk</h1>
-<p>These TinkerTalks were picked up from the events calendar but haven't been documented yet. Log in with your GitHub account to claim one and add the write-up.</p>
+<p>These TinkerTalks have already happened, but no one's added the write-up yet. Log in with your GitHub account to claim one and say what was discussed.</p>
 <div class="talk-grid">
   ${unclaimed.map(talkCardUnclaimed).join("\n  ") || "<p>Nothing waiting to be claimed right now — check back after the next sync.</p>"}
 </div>
