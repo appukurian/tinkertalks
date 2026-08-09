@@ -58,8 +58,49 @@
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
     "rows_where_875A_appears_anywhere_in_the_field": 0,
-    "rows_with_non_null_resource_ids": 0,
-    "sample_non_null_resource_ids": []
+    "rows_with_non_null_resource_ids": 5,
+    "sample_non_null_resource_ids": [
+      {
+        "id": 3596,
+        "name": "Shubhaarambham",
+        "resource_ids": [
+          13
+        ],
+        "type": "Meetup"
+      },
+      {
+        "id": 3583,
+        "name": "Breaking Bread",
+        "resource_ids": [
+          14
+        ],
+        "type": "Talk_Session"
+      },
+      {
+        "id": 3590,
+        "name": "TINKERHUB : BRAND NEW YEAR",
+        "resource_ids": [
+          13
+        ],
+        "type": "Meetup"
+      },
+      {
+        "id": 3593,
+        "name": "Core Team Meeting",
+        "resource_ids": [
+          10
+        ],
+        "type": "Core_Team_Meeting"
+      },
+      {
+        "id": 3594,
+        "name": "Chaya & Puffs \u2013 Kickstarter",
+        "resource_ids": [
+          13
+        ],
+        "type": "Meetup"
+      }
+    ]
   },
   "resource_id_filter": "875A",
   "sample_values_while_debugging": {
@@ -193,18 +234,18 @@
       }
     ]
   },
-  "synced_at": "2026-08-08T03:53:31.416678+00:00",
+  "synced_at": "2026-08-09T04:02:34.046919+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2373,
+  "total_rows_in_table": 2387,
   "type_value_counts": {
-    "Bootcamp": 156,
-    "Core_Team_Meeting": 184,
+    "Bootcamp": 158,
+    "Core_Team_Meeting": 186,
     "Hackathon": 69,
-    "Learning_Program": 1022,
+    "Learning_Program": 1025,
     "Makeathon": 1,
-    "Meetup": 489,
+    "Meetup": 493,
     "Project_Building_Program": 2,
-    "Talk_Session": 256,
-    "Workshop": 194
+    "Talk_Session": 258,
+    "Workshop": 195
   }
 }
