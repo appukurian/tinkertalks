@@ -1,0 +1,29 @@
+{
+  "chapter": "College of Engineering, Perumon",
+  "checked_in_count": 3,
+  "claimed_at": null,
+  "claimed_by": null,
+  "date": "2026-08-08T20:00:00+05:30",
+  "discussion_notes": null,
+  "district": "kollam",
+  "feedback": {
+    "avg_facilitator_effectiveness": 6.0,
+    "avg_how_organized": 6.0,
+    "avg_networking_opportunities": 4.0,
+    "avg_overall_experience": 7.0,
+    "count": 1
+  },
+  "id": "evt-3583",
+  "materials": [],
+  "metabase_row_id": 3583,
+  "participant_count": 3,
+  "photos": [],
+  "ratings": null,
+  "resource_id": "14",
+  "speakers": [],
+  "status": "unclaimed",
+  "synced_at": "2026-08-10T19:17:01.092455+00:00",
+  "topic": null,
+  "venue": null,
+  "worth_organizing": null
+}

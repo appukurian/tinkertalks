@@ -54,11 +54,11 @@
     "date": "start_date",
     "resource_id": "resource_ids"
   },
-  "matched_rows": 0,
+  "matched_rows": 3,
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
-    "rows_where_875A_appears_anywhere_in_the_field": 0,
-    "rows_with_non_null_resource_ids": 9,
+    "rows_where_14_appears_anywhere_in_the_field": 3,
+    "rows_with_non_null_resource_ids": 12,
     "sample_non_null_resource_ids": [
       {
         "id": 3596,
@@ -77,14 +77,6 @@
         "type": "Core_Team_Meeting"
       },
       {
-        "id": 3608,
-        "name": "TinkerTalks",
-        "resource_ids": [
-          14
-        ],
-        "type": "Talk_Session"
-      },
-      {
         "id": 3606,
         "name": "TinkerTalks",
         "resource_ids": [
@@ -101,6 +93,38 @@
         "type": "Meetup"
       },
       {
+        "id": 3612,
+        "name": "Core Team Meeting",
+        "resource_ids": [
+          10
+        ],
+        "type": "Core_Team_Meeting"
+      },
+      {
+        "id": 3611,
+        "name": "Linkup",
+        "resource_ids": [
+          10
+        ],
+        "type": "Core_Team_Meeting"
+      },
+      {
+        "id": 3614,
+        "name": "\u0d06\u0d28\u0d28\u0d4d\u0d26\u0d02 \u0d2a\u0d30\u0d2e\u0d3e\u0d28\u0d28\u0d4d\u0d26\u0d02",
+        "resource_ids": [
+          13
+        ],
+        "type": "Meetup"
+      },
+      {
+        "id": 3608,
+        "name": "TinkerTalks",
+        "resource_ids": [
+          14
+        ],
+        "type": "Talk_Session"
+      },
+      {
         "id": 3583,
         "name": "Breaking Bread",
         "resource_ids": [
@@ -115,26 +139,10 @@
           13
         ],
         "type": "Meetup"
-      },
-      {
-        "id": 3593,
-        "name": "Core Team Meeting",
-        "resource_ids": [
-          10
-        ],
-        "type": "Core_Team_Meeting"
-      },
-      {
-        "id": 3594,
-        "name": "Chaya & Puffs \u2013 Kickstarter",
-        "resource_ids": [
-          13
-        ],
-        "type": "Meetup"
       }
     ]
   },
-  "resource_id_filter": "875A",
+  "resource_id_filter": "14",
   "sample_values_while_debugging": {
     "columns": [
       "id",
@@ -160,122 +168,86 @@
     "note": "Structural/non-PII columns only, up to 5 rows (matched TinkerTalks if any were found, otherwise the general table).",
     "rows": [
       {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/ai web temp TV.png1716107403900191459",
-        "description": "Be sure to attend this week's AI Wednesday to stay informed about the newest advancements in artificial intelligence.",
-        "end_date": "2024-05-22T20:00:00+05:30",
-        "id": 269,
-        "interests": "AI/ML",
+        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786288422069839494d752b812-9b23-47db-b301-d65510ee3836.jpeg",
+        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
+        "end_date": "2026-08-10T16:30:00+05:30",
+        "id": 3606,
+        "interests": "Community Building",
         "is_virtual": false,
-        "location": "Tinkerspace, 21/258, Cusat.P.O, Punnekkattumoola, Seaport - Airport Rd, Vidya Nagar Colony, Thrikkakara, Kalamassery, Kochi, Kerala 682022",
-        "name": "AI Wednesday",
+        "location": "Pulimaram",
+        "name": "TinkerTalks",
         "number_of_seats": null,
         "org_id": 1,
         "report_submitted": false,
-        "resource_ids": null,
+        "resource_ids": [
+          14
+        ],
         "seats_available": null,
         "skills": "{\"data\": []}",
-        "start_date": "2024-05-22T18:00:00+05:30",
+        "start_date": "2026-08-10T16:00:00+05:30",
         "status": "published",
-        "sub_org_id": null,
+        "sub_org_id": 2616,
         "type": "Talk_Session",
-        "unique_id": "CKV2M35OON"
+        "unique_id": "XG3VFEVKP1"
       },
       {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1758870357624088966linear-gradient.png",
-        "description": "Not just another orientation is an exclusive introduction to 1st year students ",
-        "end_date": "2025-09-26T13:30:00+05:30",
-        "id": 2055,
+        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786295599265788930file_0000000098e48211a210672332a6ff3b.png",
+        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
+        "end_date": "2026-08-10T10:30:00+05:30",
+        "id": 3608,
         "interests": "",
         "is_virtual": false,
-        "location": "ICCSCEM ",
-        "name": "Not just another orientation",
+        "location": "Confrence hall",
+        "name": "TinkerTalks",
         "number_of_seats": null,
         "org_id": 1,
         "report_submitted": true,
-        "resource_ids": null,
+        "resource_ids": [
+          14
+        ],
         "seats_available": null,
         "skills": "{\"data\": [{\"name\": \"Javascript\", \"level\": 1}]}",
-        "start_date": "2025-09-26T12:30:00+05:30",
+        "start_date": "2026-08-10T09:00:00+05:30",
         "status": "published",
-        "sub_org_id": 2917,
+        "sub_org_id": 1673,
         "type": "Talk_Session",
-        "unique_id": "UUAG7S062E"
+        "unique_id": "0FCXFFA1DX"
       },
       {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/COre Team Meetup RIT \u201824.png1722874302028583135",
-        "description": "The first meetup of Tinkerhub RIT '24 team",
-        "end_date": "2024-08-05T12:45:00+05:30",
-        "id": 318,
+        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/17861708372719638331000355956.jpg",
+        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
+        "end_date": "2026-08-08T21:00:00+05:30",
+        "id": 3583,
         "interests": "Community Building",
-        "is_virtual": false,
-        "location": "RIT CSE Cafe",
-        "name": "First Meetup",
-        "number_of_seats": null,
-        "org_id": 1,
-        "report_submitted": true,
-        "resource_ids": null,
-        "seats_available": null,
-        "skills": "{\"data\": []}",
-        "start_date": "2024-08-05T12:00:00+05:30",
-        "status": "published",
-        "sub_org_id": 2160,
-        "type": "Core_Team_Meeting",
-        "unique_id": "Q1TISZ5VKZ"
-      },
-      {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/meetup-june-fotor-20240523155550.png1716559792458255010",
-        "description": "Join us for a gathering of Laravel developers as we discuss development, innovation, and collaboration. Our upcoming Laravel Meetup promises an exciting experience where like-minded programmers and enthusiasts come together to explore the latest trends, share insights, and engage in lively discussions.",
-        "end_date": "2024-06-22T12:00:00+05:30",
-        "id": 276,
-        "interests": "Social Science",
-        "is_virtual": false,
-        "location": "Tinkerspace, 21/258, Cusat.P.O, Punnekkattumoola, Seaport - Airport Rd, Vidya Nagar Colony, Thrikkakara, Kalamassery, Kochi, Kerala 682022",
-        "name": "Laravel Community Meetup",
+        "is_virtual": true,
+        "location": null,
+        "name": "Breaking Bread",
         "number_of_seats": null,
         "org_id": 1,
         "report_submitted": false,
-        "resource_ids": null,
+        "resource_ids": [
+          14
+        ],
         "seats_available": null,
         "skills": "{\"data\": []}",
-        "start_date": "2024-06-22T10:00:00+05:30",
+        "start_date": "2026-08-08T20:00:00+05:30",
         "status": "published",
-        "sub_org_id": null,
-        "type": "Meetup",
-        "unique_id": "THMK4RKQ6A"
-      },
-      {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1753430754745604886insta-story(1).jpg",
-        "description": "Welcome to \u0d38\u0d4a\u0d31\u0d2a\u0d31\u0d1a\u0d4d\u0d1a\u0d3f\u0d7d\nAn Orientation Program by TinkerHub MAMOC\n\nEver wondered what TinkerHub really is?\nA space to discover, connect, and kickstart your journey into the world of tech, ideas, and curiosity!\n\nWhat\u2019s happening?\nA super chill orientation with stories, demos, and an intro to this community!!",
-        "end_date": "2025-07-25T16:00:00+05:30",
-        "id": 1486,
-        "interests": "Community Building",
-        "is_virtual": false,
-        "location": "Mukkam",
-        "name": "\u0d38\u0d4a\u0d31\u0d2a\u0d31\u0d1a\u0d4d\u0d1a\u0d3f\u0d7d: An Orientation Program",
-        "number_of_seats": null,
-        "org_id": 1,
-        "report_submitted": true,
-        "resource_ids": null,
-        "seats_available": null,
-        "skills": "{\"data\": []}",
-        "start_date": "2025-07-25T15:00:00+05:30",
-        "status": "published",
-        "sub_org_id": 1710,
-        "type": "Meetup",
-        "unique_id": "O7I50F6PAC"
+        "sub_org_id": 2610,
+        "type": "Talk_Session",
+        "unique_id": "410M444HR5"
       }
     ]
   },
-  "synced_at": "2026-08-10T04:16:34.741994+00:00",
+  "synced_at": "2026-08-10T19:17:01.093816+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2401,
+  "total_rows_in_table": 2408,
   "type_value_counts": {
     "Bootcamp": 159,
-    "Core_Team_Meeting": 189,
+    "Core_Team_Meeting": 193,
     "Hackathon": 69,
-    "Learning_Program": 1027,
+    "Learning_Program": 1029,
     "Makeathon": 1,
-    "Meetup": 499,
+    "Meetup": 500,
     "Project_Building_Program": 2,
     "Talk_Session": 260,
     "Workshop": 195

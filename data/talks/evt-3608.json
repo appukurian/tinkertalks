@@ -1,0 +1,42 @@
+{
+  "chapter": "Thejus College Engineering College, Erumapetti",
+  "checked_in_count": 0,
+  "claimed_at": null,
+  "claimed_by": null,
+  "date": "2026-08-10T09:00:00+05:30",
+  "discussion_notes": null,
+  "district": "thrissur",
+  "feedback": null,
+  "id": "evt-3608",
+  "materials": [],
+  "metabase_row_id": 3608,
+  "participant_count": 0,
+  "photos": [
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786376832307797676talksession.png",
+      "title": "Audience"
+    },
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786376841361450907tinkerhub.png",
+      "title": "Speaker or Facilitator"
+    },
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786376849526850591WhatsAppImage2026-08-10at9.14.57PM.png",
+      "title": "Group Photo"
+    }
+  ],
+  "ratings": {
+    "alignment_with_outcome": 6,
+    "facilitator_effectiveness": 5,
+    "how_organized": 6,
+    "networking_opportunities": 4,
+    "overall_experience": 7
+  },
+  "resource_id": "14",
+  "speakers": [],
+  "status": "unclaimed",
+  "synced_at": "2026-08-10T19:17:01.092455+00:00",
+  "topic": null,
+  "venue": null,
+  "worth_organizing": true
+}

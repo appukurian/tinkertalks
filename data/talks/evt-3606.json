@@ -1,0 +1,29 @@
+{
+  "chapter": "College of Engineering, Attingal",
+  "checked_in_count": 19,
+  "claimed_at": null,
+  "claimed_by": null,
+  "date": "2026-08-10T16:00:00+05:30",
+  "discussion_notes": null,
+  "district": "thiruvananthapuram",
+  "feedback": {
+    "avg_facilitator_effectiveness": 7.0,
+    "avg_how_organized": 7.0,
+    "avg_networking_opportunities": 7.0,
+    "avg_overall_experience": 6.5,
+    "count": 2
+  },
+  "id": "evt-3606",
+  "materials": [],
+  "metabase_row_id": 3606,
+  "participant_count": 20,
+  "photos": [],
+  "ratings": null,
+  "resource_id": "14",
+  "speakers": [],
+  "status": "unclaimed",
+  "synced_at": "2026-08-10T19:17:01.092455+00:00",
+  "topic": null,
+  "venue": null,
+  "worth_organizing": null
+}
