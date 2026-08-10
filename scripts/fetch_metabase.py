@@ -11,6 +11,14 @@ and data/_schema-explore.json are how the mapping got confirmed after the
 fact. See scripts/explore_schema.py for the full 35-table schema survey that
 found the tables joined below.
 
+Correction (2026-08-10): the TinkerTalk resource_id was originally given as
+"875A", which never matched anything — data/_sync-debug.json's
+resource_id_diagnostics eventually showed *why*: once chapters started
+tagging real events, events literally named "TinkerTalks" (type
+Talk_Session) came through with resource_ids: [14], not "875A". Other
+category numbers spotted the same way: 13 = Meetup, 10 = Core_Team_Meeting.
+The default below is now 14.
+
 Env vars required:
   METABASE_URL       e.g. https://metabase.tinkerhub.org
   METABASE_API_KEY   the mb_... key (passed as the x-api-key header)
@@ -24,7 +32,8 @@ Env vars optional (all table/database IDs, from the schema survey):
   METABASE_REPORT_TABLE_ID   default 79   (event_report — photos/materials/ratings)
   METABASE_ATTENDEE_TABLE_ID default 47   (attendees — participation counts)
   METABASE_FEEDBACK_TABLE_ID default 65   (attendee_feedback — ratings, aggregated only)
-  METABASE_RESOURCE_ID       default 875A (the resource_id that marks a TinkerTalk)
+  METABASE_RESOURCE_ID       default 14 (the resource_id that marks a TinkerTalk — see
+                             note below, this was originally assumed to be "875A")
   DEBUG=1                    print columns + sample rows to the Action log and
                              exit without writing or committing anything.
 
@@ -56,7 +65,7 @@ VENUE_TABLE_ID = int(os.environ.get("METABASE_VENUE_TABLE_ID", "76"))
 REPORT_TABLE_ID = int(os.environ.get("METABASE_REPORT_TABLE_ID", "79"))
 ATTENDEE_TABLE_ID = int(os.environ.get("METABASE_ATTENDEE_TABLE_ID", "47"))
 FEEDBACK_TABLE_ID = int(os.environ.get("METABASE_FEEDBACK_TABLE_ID", "65"))
-RESOURCE_ID = os.environ.get("METABASE_RESOURCE_ID", "875A")
+RESOURCE_ID = os.environ.get("METABASE_RESOURCE_ID", "14")
 DEBUG = os.environ.get("DEBUG") == "1"
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -11,7 +11,7 @@ in-browser CMS that opens a pull request for review.
   see `data/schema.md` for the field-by-field shape and status lifecycle
   (`unclaimed → claimed → documented`).
 - **`scripts/fetch_metabase.py`** — pulls rows from the `events` table
-  (Metabase database id `33`, table id `50`) where `resource_id = 875A`,
+  (Metabase database id `33`, table id `50`) where `resource_id = 14` (the actual TinkerTalk resource — an earlier "875A" guess never matched anything),
   and creates/updates the matching JSON file per talk. Never overwrites a
   talk once it's been claimed or documented — only fills in sync metadata.
 - **`.github/workflows/fetch-metabase.yml`** — runs that script every

@@ -9,7 +9,7 @@ duplicates.
 {
   // Identity — owned by the daily Metabase sync. Don't hand-edit these.
   "id": "evt-4821",                 // stable id, derived from the metabase row id
-  "resource_id": "875A",            // the metabase resource_id that marks this as a TinkerTalk
+  "resource_id": "14",               // the metabase resource_id that marks this as a TinkerTalk
   "metabase_row_id": 4821,          // raw id from the events table, for re-sync matching
   "synced_at": "2026-08-05T02:30:00Z",
 
