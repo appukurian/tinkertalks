@@ -109,20 +109,20 @@
         "type": "Core_Team_Meeting"
       },
       {
-        "id": 3614,
-        "name": "\u0d06\u0d28\u0d28\u0d4d\u0d26\u0d02 \u0d2a\u0d30\u0d2e\u0d3e\u0d28\u0d28\u0d4d\u0d26\u0d02",
-        "resource_ids": [
-          13
-        ],
-        "type": "Meetup"
-      },
-      {
         "id": 3608,
         "name": "TinkerTalks",
         "resource_ids": [
           14
         ],
         "type": "Talk_Session"
+      },
+      {
+        "id": 3614,
+        "name": "\u0d06\u0d28\u0d28\u0d4d\u0d26\u0d02 \u0d2a\u0d30\u0d2e\u0d3e\u0d28\u0d28\u0d4d\u0d26\u0d02",
+        "resource_ids": [
+          13
+        ],
+        "type": "Meetup"
       },
       {
         "id": 3583,
@@ -238,12 +238,12 @@
       }
     ]
   },
-  "synced_at": "2026-08-10T19:17:01.093816+00:00",
+  "synced_at": "2026-08-11T04:03:45.422390+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2408,
+  "total_rows_in_table": 2409,
   "type_value_counts": {
     "Bootcamp": 159,
-    "Core_Team_Meeting": 193,
+    "Core_Team_Meeting": 194,
     "Hackathon": 69,
     "Learning_Program": 1029,
     "Makeathon": 1,
