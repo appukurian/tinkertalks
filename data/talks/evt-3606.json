@@ -7,11 +7,11 @@
   "discussion_notes": null,
   "district": "thiruvananthapuram",
   "feedback": {
-    "avg_facilitator_effectiveness": 7.0,
-    "avg_how_organized": 7.0,
-    "avg_networking_opportunities": 7.0,
-    "avg_overall_experience": 6.5,
-    "count": 2
+    "avg_facilitator_effectiveness": 5.25,
+    "avg_how_organized": 5.25,
+    "avg_networking_opportunities": 5.25,
+    "avg_overall_experience": 6.75,
+    "count": 4
   },
   "id": "evt-3606",
   "materials": [],
@@ -22,7 +22,7 @@
   "resource_id": "14",
   "speakers": [],
   "status": "unclaimed",
-  "synced_at": "2026-08-11T04:03:45.420631+00:00",
+  "synced_at": "2026-08-12T04:25:02.593799+00:00",
   "topic": null,
   "venue": null,
   "worth_organizing": null
