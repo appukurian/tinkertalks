@@ -7,23 +7,42 @@
   "discussion_notes": null,
   "district": "thiruvananthapuram",
   "feedback": {
-    "avg_facilitator_effectiveness": 5.25,
-    "avg_how_organized": 5.25,
-    "avg_networking_opportunities": 5.25,
-    "avg_overall_experience": 6.75,
-    "count": 4
+    "avg_facilitator_effectiveness": 5.6,
+    "avg_how_organized": 5.6,
+    "avg_networking_opportunities": 5.6,
+    "avg_overall_experience": 6.8,
+    "count": 5
   },
   "id": "evt-3606",
   "materials": [],
   "metabase_row_id": 3606,
   "participant_count": 20,
-  "photos": [],
-  "ratings": null,
+  "photos": [
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786517085833733133IMG_9385.png",
+      "title": "Audience"
+    },
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786517094346837875IMG_9386.png",
+      "title": "Speaker or Facilitator"
+    },
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786517144210770843IMG_9388.png",
+      "title": "Group Photo"
+    }
+  ],
+  "ratings": {
+    "alignment_with_outcome": 6,
+    "facilitator_effectiveness": 6,
+    "how_organized": 6,
+    "networking_opportunities": 6,
+    "overall_experience": 6
+  },
   "resource_id": "14",
   "speakers": [],
   "status": "unclaimed",
-  "synced_at": "2026-08-12T04:25:02.593799+00:00",
+  "synced_at": "2026-08-13T04:28:02.528797+00:00",
   "topic": null,
   "venue": null,
-  "worth_organizing": null
+  "worth_organizing": true
 }
