@@ -58,7 +58,7 @@
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
     "rows_where_14_appears_anywhere_in_the_field": 8,
-    "rows_with_non_null_resource_ids": 24,
+    "rows_with_non_null_resource_ids": 26,
     "sample_non_null_resource_ids": [
       {
         "id": 3596,
@@ -75,14 +75,6 @@
           10
         ],
         "type": "Core_Team_Meeting"
-      },
-      {
-        "id": 3610,
-        "name": "Chaya & Puffs \u2013 Kickstarter",
-        "resource_ids": [
-          13
-        ],
-        "type": "Meetup"
       },
       {
         "id": 3612,
@@ -139,6 +131,14 @@
           10
         ],
         "type": "Core_Team_Meeting"
+      },
+      {
+        "id": 3627,
+        "name": "TinkerTalks",
+        "resource_ids": [
+          14
+        ],
+        "type": "Meetup"
       }
     ]
   },
@@ -284,18 +284,18 @@
       }
     ]
   },
-  "synced_at": "2026-08-13T04:28:02.530842+00:00",
+  "synced_at": "2026-08-14T04:24:53.953394+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2448,
+  "total_rows_in_table": 2462,
   "type_value_counts": {
     "Bootcamp": 163,
-    "Core_Team_Meeting": 196,
+    "Core_Team_Meeting": 197,
     "Hackathon": 69,
-    "Learning_Program": 1045,
+    "Learning_Program": 1054,
     "Makeathon": 1,
-    "Meetup": 511,
+    "Meetup": 513,
     "Project_Building_Program": 2,
-    "Talk_Session": 265,
+    "Talk_Session": 267,
     "Workshop": 196
   }
 }

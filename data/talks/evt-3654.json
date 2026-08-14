@@ -1,23 +1,48 @@
 {
   "chapter": "College of Engineering, Vadakara",
-  "checked_in_count": 0,
+  "checked_in_count": 7,
   "claimed_at": null,
   "claimed_by": null,
   "date": "2026-08-13T16:00:00+05:30",
   "discussion_notes": null,
   "district": "kozhikode",
-  "feedback": null,
+  "feedback": {
+    "avg_facilitator_effectiveness": 7.0,
+    "avg_how_organized": 7.0,
+    "avg_networking_opportunities": 7.0,
+    "avg_overall_experience": 7.0,
+    "count": 2
+  },
   "id": "evt-3654",
   "materials": [],
   "metabase_row_id": 3654,
-  "participant_count": 1,
-  "photos": [],
-  "ratings": null,
+  "participant_count": 8,
+  "photos": [
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786624013164654859IMG_20260813_163007966.png",
+      "title": "Audience"
+    },
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786624051816649298IMG_20260813_163048337.png",
+      "title": "Speaker or Facilitator"
+    },
+    {
+      "link": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786623941009263380IMG_20260813_171049194.png",
+      "title": "Group Photo"
+    }
+  ],
+  "ratings": {
+    "alignment_with_outcome": 7,
+    "facilitator_effectiveness": 7,
+    "how_organized": 7,
+    "networking_opportunities": 7,
+    "overall_experience": 7
+  },
   "resource_id": "14",
   "speakers": [],
   "status": "unclaimed",
-  "synced_at": "2026-08-13T04:28:02.528797+00:00",
+  "synced_at": "2026-08-14T04:24:53.950443+00:00",
   "topic": null,
   "venue": null,
-  "worth_organizing": null
+  "worth_organizing": true
 }
