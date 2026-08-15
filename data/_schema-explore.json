@@ -6,7 +6,7 @@
     {
       "description": "Post-event surveys collecting ratings and improvement suggestions from attendees.",
       "display_name": "Attendee Feedback",
-      "estimated_row_count": 21683,
+      "estimated_row_count": 21739,
       "fields": [
         {
           "base_type": "type/Integer",
@@ -100,14 +100,14 @@
     {
       "description": "Event registrations and check-ins. Tracks attendance, check-in times, team assignments, and venue selections.",
       "display_name": "Attendees",
-      "estimated_row_count": 101867,
+      "estimated_row_count": 102144,
       "fields": [
         {
           "base_type": "type/Boolean",
           "description": "Whether the attendee has checked in",
           "display_name": "Check In",
           "name": "check_in",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -142,7 +142,7 @@
           "description": "Whether feedback has been submitted",
           "display_name": "Feedback Completed",
           "name": "feedback_completed",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -354,7 +354,7 @@
     {
       "description": "Event prerequisite tracking. Defines which events must be attended before registering for others.",
       "display_name": "Dependent Events",
-      "estimated_row_count": 0,
+      "estimated_row_count": null,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -399,7 +399,7 @@
     {
       "description": "Educational history for member profiles. Tracks schools, degrees, and enrollment periods.",
       "display_name": "Education",
-      "estimated_row_count": 47311,
+      "estimated_row_count": 47673,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -441,14 +441,14 @@
           "description": "Whether the member is currently enrolled",
           "display_name": "Is Current",
           "name": "is_current",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this is a school (vs college/university)",
           "display_name": "Is School",
           "name": "is_school",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -507,7 +507,7 @@
     {
       "description": "Member enrollments in event groups/series. Tracks participation status.",
       "display_name": "Event Group Subscriptions",
-      "estimated_row_count": 11661,
+      "estimated_row_count": 11667,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -559,7 +559,7 @@
     {
       "description": "Event series like Study Jams (multi-session learning cohorts). Supports subscriptions, projects, and Discord integration.",
       "display_name": "Event Groups",
-      "estimated_row_count": 285,
+      "estimated_row_count": 286,
       "fields": [
         {
           "base_type": "type/Text",
@@ -580,7 +580,7 @@
           "description": "Whether this group is restricted to a specific campus",
           "display_name": "Campus Exclusive",
           "name": "campus_exclusive",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -601,7 +601,7 @@
           "description": "Whether a Discord reminder has been sent",
           "display_name": "Discord Reminder Sent",
           "name": "discord_reminder_sent",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -629,14 +629,14 @@
           "description": "Whether this group is campus-specific",
           "display_name": "Is Sub Org",
           "name": "is_sub_org",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this group has limited seating",
           "display_name": "Limited Seats",
           "name": "limited_seats",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -650,7 +650,7 @@
           "description": "Whether this group involves ongoing project work",
           "display_name": "Project Based",
           "name": "project_based",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -789,7 +789,7 @@
     {
       "description": "Organizer post-event reports with ratings, photos, and materials. Tracks event success metrics.",
       "display_name": "Event Report",
-      "estimated_row_count": 1838,
+      "estimated_row_count": 1845,
       "fields": [
         {
           "base_type": "type/Integer",
@@ -901,7 +901,7 @@
           "description": "Whether the event was worth organizing",
           "display_name": "Worth Organizing",
           "name": "worth_organizing",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         }
       ],
       "id": 79,
@@ -1019,21 +1019,21 @@
           "description": "Whether this venue has exclusive use",
           "display_name": "Is Exclusive",
           "name": "is_exclusive",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this venue has limited seating",
           "display_name": "Is Limited Seats",
           "name": "is_limited_seats",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this venue is at a campus location",
           "display_name": "Is Sub Org",
           "name": "is_sub_org",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -1092,14 +1092,14 @@
     {
       "description": "Event definitions with settings for virtual/physical, team-based, multi-venue, project submissions, and prizes.",
       "display_name": "Events",
-      "estimated_row_count": 2462,
+      "estimated_row_count": 2474,
       "fields": [
         {
           "base_type": "type/Boolean",
           "description": "Whether non-GitHub project links are accepted",
           "display_name": "Allow Non Github Links",
           "name": "allow_non_github_links",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -1113,14 +1113,14 @@
           "description": "Whether this event is restricted to a specific campus",
           "display_name": "Campus Exclusive",
           "name": "campus_exclusive",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this event is restricted to specific member categories",
           "display_name": "Category Exclusive",
           "name": "category_exclusive",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -1176,7 +1176,7 @@
           "description": "Whether this event appears on the homepage",
           "display_name": "Featured",
           "name": "featured",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -1190,14 +1190,14 @@
           "description": "Whether event group subscription is required",
           "display_name": "Group Mandatory",
           "name": "group_mandatory",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this event offers prizes",
           "display_name": "Has Prize",
           "name": "has_prize",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -1218,56 +1218,56 @@
           "description": "Whether this event has prerequisite events",
           "display_name": "Is Dependent",
           "name": "is_dependent",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this event is hosted externally",
           "display_name": "Is External",
           "name": "is_external",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether registration requires an invitation",
           "display_name": "Is Invite Only",
           "name": "is_invite_only",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this event has limited seating",
           "display_name": "Is Limited Seats",
           "name": "is_limited_seats",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this event requires project submissions",
           "display_name": "Is Project Based",
           "name": "is_project_based",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this is a TinkerSpace session",
           "display_name": "Is Space",
           "name": "is_space",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether projects are submitted as a team",
           "display_name": "Is Team Project Submission",
           "name": "is_team_project_submission",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this is an online event",
           "display_name": "Is Virtual",
           "name": "is_virtual",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -1295,7 +1295,7 @@
           "description": "Whether this event has multiple physical venues",
           "display_name": "Multiple Venue",
           "name": "multiple_venue",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -1323,7 +1323,7 @@
           "description": "Whether pre-event invitations are sent",
           "display_name": "Pre Invite",
           "name": "pre_invite",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -1351,7 +1351,7 @@
           "description": "Whether the organizer report has been submitted",
           "display_name": "Report Submitted",
           "name": "report_submitted",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/*",
@@ -1382,6 +1382,13 @@
           "semantic_type": null
         },
         {
+          "base_type": "type/Integer",
+          "description": null,
+          "display_name": "Space ID",
+          "name": "space_id",
+          "semantic_type": null
+        },
+        {
           "base_type": "type/DateTimeWithLocalTZ",
           "description": "Event start date and time",
           "display_name": "Start Date",
@@ -1407,7 +1414,7 @@
           "description": "Whether this event has team-based participation",
           "display_name": "Team Event",
           "name": "team_event",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -1445,7 +1452,7 @@
     {
       "description": "Work and volunteer experience for member profiles. Tracks positions, companies, and tenure.",
       "display_name": "Experience",
-      "estimated_row_count": 2802,
+      "estimated_row_count": 2810,
       "fields": [
         {
           "base_type": "type/Text",
@@ -1487,7 +1494,7 @@
           "description": "Whether the member is currently in this position",
           "display_name": "Is Current",
           "name": "is_current",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -1696,7 +1703,7 @@
     {
       "description": "Vouching/referral system. Members invite others by phone number; tracks invitation status.",
       "display_name": "Invitations",
-      "estimated_row_count": 35942,
+      "estimated_row_count": 36179,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -1762,7 +1769,7 @@
     {
       "description": "Member profiles with personal info, social links, skills, and preferences. Main record linking users to organizations.",
       "display_name": "Memberships",
-      "estimated_row_count": 43858,
+      "estimated_row_count": 44135,
       "fields": [
         {
           "base_type": "type/JSON",
@@ -1842,13 +1849,6 @@
           "semantic_type": null
         },
         {
-          "base_type": "type/Boolean",
-          "description": "Whether the TinkerSpace check-in report has been submitted",
-          "display_name": "Checkin Report Submitted",
-          "name": "checkin_report_submitted",
-          "semantic_type": "type/Category"
-        },
-        {
           "base_type": "type/Text",
           "description": "Current employer name (for working professionals)",
           "display_name": "Company Name",
@@ -1888,14 +1888,14 @@
           "description": "Whether the member receives notifications",
           "display_name": "Enable Communication",
           "name": "enable_communication",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
           "description": "Dietary preference for events",
           "display_name": "Food Preference",
           "name": "food_preference",
-          "semantic_type": null
+          "semantic_type": "type/Category"
         },
         {
           "base_type": "type/Text",
@@ -1944,35 +1944,35 @@
           "description": "Whether the member has been approved by an admin",
           "display_name": "Is Approved",
           "name": "is_approved",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this is a guest account with limited access",
           "display_name": "Is Guest",
           "name": "is_guest",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether the member has completed onboarding",
           "display_name": "Is Onboard",
           "name": "is_onboard",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether the profile is hidden from the public directory",
           "display_name": "Is Private",
           "name": "is_private",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether the member is currently a student",
           "display_name": "Is Student",
           "name": "is_student",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -2136,7 +2136,7 @@
           "description": "Whether this is restricted to active campus members",
           "display_name": "Active Campus Only",
           "name": "active_campus_only",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -2185,7 +2185,7 @@
           "description": "Custom eligibility screening question",
           "display_name": "Eligibility Question",
           "name": "eligibility_question",
-          "semantic_type": null
+          "semantic_type": "type/Category"
         },
         {
           "base_type": "type/Text",
@@ -2199,7 +2199,7 @@
           "description": "Whether this is a featured listing",
           "display_name": "Featured",
           "name": "featured",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -2213,14 +2213,14 @@
           "description": "Whether applications are handled externally",
           "display_name": "Is External",
           "name": "is_external",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this is a volunteering opportunity",
           "display_name": "Is Volunteering",
           "name": "is_volunteering",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -2255,14 +2255,14 @@
           "description": "Whether a GitHub profile is required",
           "display_name": "Require Github",
           "name": "require_github",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": "Whether this is restricted to students",
           "display_name": "Student Only",
           "name": "student_only",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -2276,7 +2276,7 @@
           "description": "Task/assignment instructions for applicants",
           "display_name": "Task Instructions",
           "name": "task_instructions",
-          "semantic_type": null
+          "semantic_type": "type/Category"
         },
         {
           "base_type": "type/Text",
@@ -2321,7 +2321,7 @@
     {
       "description": "Event organizer assignments linking members to events. Supports multi-venue organizer roles.",
       "display_name": "Organizers",
-      "estimated_row_count": 13589,
+      "estimated_row_count": 13630,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2349,14 +2349,14 @@
           "description": "Whether this organizer is the primary host",
           "display_name": "Is Host",
           "name": "is_host",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Boolean",
           "description": null,
           "display_name": "Is Mentor",
           "name": "is_mentor",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -2665,7 +2665,7 @@
     {
       "description": "Project team members with display ordering. Links members to projects they contributed to.",
       "display_name": "Project Collaborators",
-      "estimated_row_count": 13792,
+      "estimated_row_count": 13795,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2717,7 +2717,7 @@
     {
       "description": "Project milestone tracking with ordered stages. Tracks progress through development lifecycle.",
       "display_name": "Project Stages",
-      "estimated_row_count": 7739,
+      "estimated_row_count": 7742,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2783,14 +2783,14 @@
     {
       "description": "Hackathon/event submissions and portfolio projects. Supports collaboration, stages, and verification.",
       "display_name": "Projects",
-      "estimated_row_count": 7607,
+      "estimated_row_count": 7610,
       "fields": [
         {
           "base_type": "type/Boolean",
           "description": "Whether this project is accepting collaborators",
           "display_name": "Can Collaborate",
           "name": "can_collaborate",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -2832,7 +2832,7 @@
           "description": "Whether this project was created for an event",
           "display_name": "Event Based",
           "name": "event_based",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -2874,7 +2874,7 @@
           "description": "Whether this project is completed",
           "display_name": "Is Completed",
           "name": "is_completed",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -2888,7 +2888,7 @@
           "description": "Whether this project is open source",
           "display_name": "Open Source",
           "name": "open_source",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Text",
@@ -2944,7 +2944,7 @@
           "description": "Whether this project has been verified by an admin",
           "display_name": "Verified",
           "name": "verified",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         }
       ],
       "id": 43,
@@ -2999,7 +2999,7 @@
           "description": null,
           "display_name": "Dirty",
           "name": "dirty",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/BigInteger",
@@ -3016,7 +3016,7 @@
     {
       "description": "TinkerSpace (24/7 makerspace in Kochi) check-in/out records via The Hub app. Tracks presence and project work.",
       "display_name": "Space Check In",
-      "estimated_row_count": 77254,
+      "estimated_row_count": 77330,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3051,7 +3051,7 @@
           "description": "Whether this is a mentor visit",
           "display_name": "Is Mentor",
           "name": "is_mentor",
-          "semantic_type": "type/Category"
+          "semantic_type": null
         },
         {
           "base_type": "type/Integer",
@@ -3073,6 +3073,13 @@
           "display_name": "Purpose",
           "name": "purpose",
           "semantic_type": "type/Category"
+        },
+        {
+          "base_type": "type/Integer",
+          "description": null,
+          "display_name": "Space ID",
+          "name": "space_id",
+          "semantic_type": null
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3142,6 +3149,13 @@
         },
         {
           "base_type": "type/Integer",
+          "description": null,
+          "display_name": "Space ID",
+          "name": "space_id",
+          "semantic_type": null
+        },
+        {
+          "base_type": "type/Integer",
           "description": "The manager who submitted this report",
           "display_name": "Submitted By",
           "name": "submitted_by",
@@ -3169,7 +3183,7 @@
     {
       "description": "Event speaker profiles. Can be linked to existing members or created for external speakers.",
       "display_name": "Speaker",
-      "estimated_row_count": 0,
+      "estimated_row_count": null,
       "fields": [
         {
           "base_type": "type/Text",
@@ -3235,7 +3249,7 @@
     {
       "description": "Campus leadership assignments by year. Tracks leads and co-leads for each academic year.",
       "display_name": "Sub Org Admins",
-      "estimated_row_count": 757,
+      "estimated_row_count": 758,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3315,7 +3329,7 @@
           "description": "Campus logo URL",
           "display_name": "Avatar",
           "name": "avatar",
-          "semantic_type": null
+          "semantic_type": "type/Category"
         },
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3455,7 +3469,7 @@
           "description": "Campus website URL",
           "display_name": "Website",
           "name": "website",
-          "semantic_type": null
+          "semantic_type": "type/Category"
         }
       ],
       "id": 41,
@@ -3465,7 +3479,7 @@
     {
       "description": "Reserved usernames ensuring uniqueness across the platform.",
       "display_name": "Username",
-      "estimated_row_count": 9490,
+      "estimated_row_count": 9537,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3510,7 +3524,7 @@
     {
       "description": "Login records for phone-based authentication. Links to memberships for organization profiles.",
       "display_name": "Users",
-      "estimated_row_count": 47571,
+      "estimated_row_count": 47970,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",

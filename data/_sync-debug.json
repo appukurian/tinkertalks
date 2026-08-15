@@ -48,17 +48,18 @@
     "group_mandatory",
     "category_exclusive",
     "eligible_category_ids",
-    "resource_ids"
+    "resource_ids",
+    "space_id"
   ],
   "guessed_mapping": {
     "date": "start_date",
     "resource_id": "resource_ids"
   },
-  "matched_rows": 8,
+  "matched_rows": 4,
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
-    "rows_where_14_appears_anywhere_in_the_field": 8,
-    "rows_with_non_null_resource_ids": 26,
+    "rows_where_14_appears_anywhere_in_the_field": 4,
+    "rows_with_non_null_resource_ids": 10,
     "sample_non_null_resource_ids": [
       {
         "id": 3596,
@@ -258,44 +259,21 @@
         "sub_org_id": 1948,
         "type": "Meetup",
         "unique_id": "ZMHZW559Y1"
-      },
-      {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786288422069839494d752b812-9b23-47db-b301-d65510ee3836.jpeg",
-        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
-        "end_date": "2026-08-10T16:30:00+05:30",
-        "id": 3606,
-        "interests": "Community Building",
-        "is_virtual": false,
-        "location": "Pulimaram",
-        "name": "TinkerTalks",
-        "number_of_seats": null,
-        "org_id": 1,
-        "report_submitted": true,
-        "resource_ids": [
-          14
-        ],
-        "seats_available": null,
-        "skills": "{\"data\": []}",
-        "start_date": "2026-08-10T16:00:00+05:30",
-        "status": "published",
-        "sub_org_id": 2616,
-        "type": "Talk_Session",
-        "unique_id": "XG3VFEVKP1"
       }
     ]
   },
-  "synced_at": "2026-08-14T04:24:53.953394+00:00",
+  "synced_at": "2026-08-15T03:22:31.669697+00:00",
   "table_id": 50,
-  "total_rows_in_table": 2462,
+  "total_rows_in_table": 2000,
   "type_value_counts": {
-    "Bootcamp": 163,
-    "Core_Team_Meeting": 197,
-    "Hackathon": 69,
-    "Learning_Program": 1054,
+    "Bootcamp": 130,
+    "Core_Team_Meeting": 154,
+    "Hackathon": 61,
+    "Learning_Program": 885,
     "Makeathon": 1,
-    "Meetup": 513,
-    "Project_Building_Program": 2,
-    "Talk_Session": 267,
-    "Workshop": 196
+    "Meetup": 384,
+    "Project_Building_Program": 1,
+    "Talk_Session": 228,
+    "Workshop": 156
   }
 }
