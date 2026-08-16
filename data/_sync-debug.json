@@ -59,7 +59,7 @@
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
     "rows_where_14_appears_anywhere_in_the_field": 4,
-    "rows_with_non_null_resource_ids": 10,
+    "rows_with_non_null_resource_ids": 12,
     "sample_non_null_resource_ids": [
       {
         "id": 3596,
@@ -94,6 +94,22 @@
         "type": "Talk_Session"
       },
       {
+        "id": 3690,
+        "name": "Core Team \u0d1a\u0d7c\u0d1a\u0d4d\u0d1a\u0d15\u0d7e",
+        "resource_ids": [
+          10
+        ],
+        "type": "Core_Team_Meeting"
+      },
+      {
+        "id": 3691,
+        "name": "Mohabbat ka Sharbat",
+        "resource_ids": [
+          13
+        ],
+        "type": "Meetup"
+      },
+      {
         "id": 3614,
         "name": "\u0d06\u0d28\u0d28\u0d4d\u0d26\u0d02 \u0d2a\u0d30\u0d2e\u0d3e\u0d28\u0d28\u0d4d\u0d26\u0d02",
         "resource_ids": [
@@ -124,22 +140,6 @@
           10
         ],
         "type": "Core_Team_Meeting"
-      },
-      {
-        "id": 3611,
-        "name": "Linkup",
-        "resource_ids": [
-          10
-        ],
-        "type": "Core_Team_Meeting"
-      },
-      {
-        "id": 3627,
-        "name": "TinkerTalks",
-        "resource_ids": [
-          14
-        ],
-        "type": "Meetup"
       }
     ]
   },
@@ -262,16 +262,16 @@
       }
     ]
   },
-  "synced_at": "2026-08-15T03:22:31.669697+00:00",
+  "synced_at": "2026-08-16T03:28:57.577185+00:00",
   "table_id": 50,
   "total_rows_in_table": 2000,
   "type_value_counts": {
     "Bootcamp": 130,
-    "Core_Team_Meeting": 154,
-    "Hackathon": 61,
-    "Learning_Program": 885,
+    "Core_Team_Meeting": 155,
+    "Hackathon": 62,
+    "Learning_Program": 882,
     "Makeathon": 1,
-    "Meetup": 384,
+    "Meetup": 385,
     "Project_Building_Program": 1,
     "Talk_Session": 228,
     "Workshop": 156
