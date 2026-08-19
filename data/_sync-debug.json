@@ -55,11 +55,11 @@
     "date": "start_date",
     "resource_id": "resource_ids"
   },
-  "matched_rows": 5,
+  "matched_rows": 3,
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
-    "rows_where_14_appears_anywhere_in_the_field": 5,
-    "rows_with_non_null_resource_ids": 14,
+    "rows_where_14_appears_anywhere_in_the_field": 3,
+    "rows_with_non_null_resource_ids": 12,
     "sample_non_null_resource_ids": [
       {
         "id": 3596,
@@ -92,14 +92,6 @@
           10
         ],
         "type": "Core_Team_Meeting"
-      },
-      {
-        "id": 3624,
-        "name": "Tinker Tuesday",
-        "resource_ids": [
-          14
-        ],
-        "type": "Talk_Session"
       },
       {
         "id": 3625,
@@ -138,6 +130,14 @@
         "name": "TinkerTalks",
         "resource_ids": [
           14
+        ],
+        "type": "Meetup"
+      },
+      {
+        "id": 3691,
+        "name": "Mohabbat ka Sharbat",
+        "resource_ids": [
+          13
         ],
         "type": "Meetup"
       }
@@ -192,29 +192,6 @@
         "unique_id": "0FCXFFA1DX"
       },
       {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/17864389249890809531000310738.png",
-        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
-        "end_date": "2026-08-11T17:55:00+05:30",
-        "id": 3624,
-        "interests": "Community Building",
-        "is_virtual": false,
-        "location": "ECE seminar hall ",
-        "name": "Tinker Tuesday",
-        "number_of_seats": null,
-        "org_id": 1,
-        "report_submitted": false,
-        "resource_ids": [
-          14
-        ],
-        "seats_available": null,
-        "skills": "{\"data\": []}",
-        "start_date": "2026-08-11T16:25:00+05:30",
-        "status": "pending",
-        "sub_org_id": 1664,
-        "type": "Talk_Session",
-        "unique_id": "NRZGHOA18M"
-      },
-      {
         "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/178643994832076001849995.png",
         "description": "The first community meetup of TinkerHub AACET \u2014 a space to meet new people, share ideas, explore technology, and start building together",
         "end_date": "2026-08-11T05:00:00+05:30",
@@ -259,44 +236,21 @@
         "sub_org_id": 1948,
         "type": "Meetup",
         "unique_id": "ZMHZW559Y1"
-      },
-      {
-        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/1786977112481317601WhatsAppImage2026-08-17at7.00.36PM.jpeg",
-        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
-        "end_date": "2026-08-18T17:30:00+05:30",
-        "id": 3704,
-        "interests": "Community Building",
-        "is_virtual": false,
-        "location": "IOT Lab",
-        "name": "TinkerTalks",
-        "number_of_seats": null,
-        "org_id": 1,
-        "report_submitted": false,
-        "resource_ids": [
-          14
-        ],
-        "seats_available": null,
-        "skills": "{\"data\": []}",
-        "start_date": "2026-08-18T16:00:00+05:30",
-        "status": "pending",
-        "sub_org_id": 1895,
-        "type": "Talk_Session",
-        "unique_id": "RI4G0WZK3V"
       }
     ]
   },
-  "synced_at": "2026-08-18T03:24:40.184267+00:00",
+  "synced_at": "2026-08-19T03:26:26.223231+00:00",
   "table_id": 50,
   "total_rows_in_table": 2000,
   "type_value_counts": {
-    "Bootcamp": 133,
+    "Bootcamp": 132,
     "Core_Team_Meeting": 155,
     "Hackathon": 62,
-    "Learning_Program": 876,
+    "Learning_Program": 877,
     "Makeathon": 1,
-    "Meetup": 388,
+    "Meetup": 390,
     "Project_Building_Program": 1,
-    "Talk_Session": 228,
+    "Talk_Session": 226,
     "Workshop": 156
   }
 }
