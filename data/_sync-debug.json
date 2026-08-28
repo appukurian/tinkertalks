@@ -55,11 +55,11 @@
     "date": "start_date",
     "resource_id": "resource_ids"
   },
-  "matched_rows": 3,
+  "matched_rows": 4,
   "note": "If a guessed_mapping value looks wrong, update MAPPING_HINTS in scripts/fetch_metabase.py to point at the correct column name.",
   "resource_id_diagnostics": {
-    "rows_where_14_appears_anywhere_in_the_field": 3,
-    "rows_with_non_null_resource_ids": 12,
+    "rows_where_14_appears_anywhere_in_the_field": 4,
+    "rows_with_non_null_resource_ids": 17,
     "sample_non_null_resource_ids": [
       {
         "id": 3596,
@@ -94,6 +94,22 @@
         "type": "Core_Team_Meeting"
       },
       {
+        "id": 3803,
+        "name": "Code a Pookalam",
+        "resource_ids": [
+          15
+        ],
+        "type": "Hackathon"
+      },
+      {
+        "id": 3802,
+        "name": "TinkerTalks",
+        "resource_ids": [
+          14
+        ],
+        "type": "Talk_Session"
+      },
+      {
         "id": 3625,
         "name": "TinkerStart",
         "resource_ids": [
@@ -124,22 +140,6 @@
           10
         ],
         "type": "Core_Team_Meeting"
-      },
-      {
-        "id": 3627,
-        "name": "TinkerTalks",
-        "resource_ids": [
-          14
-        ],
-        "type": "Meetup"
-      },
-      {
-        "id": 3691,
-        "name": "Mohabbat ka Sharbat",
-        "resource_ids": [
-          13
-        ],
-        "type": "Meetup"
       }
     ]
   },
@@ -192,6 +192,29 @@
         "unique_id": "0FCXFFA1DX"
       },
       {
+        "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/17878412146056082411.png",
+        "description": "A weekly community gathering where makers come together to explore ideas, tools, and technologies through conversations, demonstrations, and peer-led learning. Guided by TinkerHub's bi-monthly themes, TinkerTalks keeps learning fresh while creating a consistent rhythm that helps campus communities stay active, curious, and engaged throughout the year.",
+        "end_date": "2026-08-27T21:00:00+05:30",
+        "id": 3802,
+        "interests": "Community Building",
+        "is_virtual": true,
+        "location": null,
+        "name": "TinkerTalks",
+        "number_of_seats": null,
+        "org_id": 1,
+        "report_submitted": false,
+        "resource_ids": [
+          14
+        ],
+        "seats_available": null,
+        "skills": "{\"data\": []}",
+        "start_date": "2026-08-27T20:30:00+05:30",
+        "status": "published",
+        "sub_org_id": 2083,
+        "type": "Talk_Session",
+        "unique_id": "KO8S47T5RQ"
+      },
+      {
         "banner": "https://appbucket-hoomans.s3.ap-south-1.amazonaws.com/178643994832076001849995.png",
         "description": "The first community meetup of TinkerHub AACET \u2014 a space to meet new people, share ideas, explore technology, and start building together",
         "end_date": "2026-08-11T05:00:00+05:30",
@@ -239,18 +262,18 @@
       }
     ]
   },
-  "synced_at": "2026-08-27T13:03:27.590257+00:00",
+  "synced_at": "2026-08-28T14:33:47.160090+00:00",
   "table_id": 50,
   "total_rows_in_table": 2000,
   "type_value_counts": {
     "Bootcamp": 133,
-    "Core_Team_Meeting": 154,
-    "Hackathon": 62,
-    "Learning_Program": 879,
+    "Core_Team_Meeting": 158,
+    "Hackathon": 64,
+    "Learning_Program": 873,
     "Makeathon": 1,
-    "Meetup": 389,
+    "Meetup": 387,
     "Project_Building_Program": 1,
     "Talk_Session": 225,
-    "Workshop": 156
+    "Workshop": 158
   }
 }
