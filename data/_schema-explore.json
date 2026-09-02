@@ -6,7 +6,7 @@
     {
       "description": "Post-event surveys collecting ratings and improvement suggestions from attendees.",
       "display_name": "Attendee Feedback",
-      "estimated_row_count": 22524,
+      "estimated_row_count": 22633,
       "fields": [
         {
           "base_type": "type/Integer",
@@ -100,7 +100,7 @@
     {
       "description": "Event registrations and check-ins. Tracks attendance, check-in times, team assignments, and venue selections.",
       "display_name": "Attendees",
-      "estimated_row_count": 107500,
+      "estimated_row_count": 108555,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -399,7 +399,7 @@
     {
       "description": "Educational history for member profiles. Tracks schools, degrees, and enrollment periods.",
       "display_name": "Education",
-      "estimated_row_count": 50423,
+      "estimated_row_count": 50927,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -507,7 +507,7 @@
     {
       "description": "Member enrollments in event groups/series. Tracks participation status.",
       "display_name": "Event Group Subscriptions",
-      "estimated_row_count": 12216,
+      "estimated_row_count": 12300,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -911,7 +911,7 @@
     {
       "description": "Teams within team-based events. Supports join codes and venue assignments.",
       "display_name": "Event Team",
-      "estimated_row_count": 10522,
+      "estimated_row_count": 10698,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -977,7 +977,7 @@
     {
       "description": "Multiple venue support for events. Allows different locations with separate capacities and schedules.",
       "display_name": "Event Venue",
-      "estimated_row_count": 310,
+      "estimated_row_count": 312,
       "fields": [
         {
           "base_type": "type/Text",
@@ -1092,7 +1092,7 @@
     {
       "description": "Event definitions with settings for virtual/physical, team-based, multi-venue, project submissions, and prizes.",
       "display_name": "Events",
-      "estimated_row_count": 2618,
+      "estimated_row_count": 2630,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -1452,7 +1452,7 @@
     {
       "description": "Work and volunteer experience for member profiles. Tracks positions, companies, and tenure.",
       "display_name": "Experience",
-      "estimated_row_count": 2905,
+      "estimated_row_count": 2914,
       "fields": [
         {
           "base_type": "type/Text",
@@ -1703,7 +1703,7 @@
     {
       "description": "Vouching/referral system. Members invite others by phone number; tracks invitation status.",
       "display_name": "Invitations",
-      "estimated_row_count": 37957,
+      "estimated_row_count": 38228,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -1769,7 +1769,7 @@
     {
       "description": "Member profiles with personal info, social links, skills, and preferences. Main record linking users to organizations.",
       "display_name": "Memberships",
-      "estimated_row_count": 46529,
+      "estimated_row_count": 46976,
       "fields": [
         {
           "base_type": "type/JSON",
@@ -2321,7 +2321,7 @@
     {
       "description": "Event organizer assignments linking members to events. Supports multi-venue organizer roles.",
       "display_name": "Organizers",
-      "estimated_row_count": 14337,
+      "estimated_row_count": 14412,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2665,7 +2665,7 @@
     {
       "description": "Project team members with display ordering. Links members to projects they contributed to.",
       "display_name": "Project Collaborators",
-      "estimated_row_count": 14059,
+      "estimated_row_count": 14084,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2717,7 +2717,7 @@
     {
       "description": "Project milestone tracking with ordered stages. Tracks progress through development lifecycle.",
       "display_name": "Project Stages",
-      "estimated_row_count": 7976,
+      "estimated_row_count": 7995,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2783,7 +2783,7 @@
     {
       "description": "Hackathon/event submissions and portfolio projects. Supports collaboration, stages, and verification.",
       "display_name": "Projects",
-      "estimated_row_count": 7843,
+      "estimated_row_count": 7862,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -3016,7 +3016,7 @@
     {
       "description": "TinkerSpace (24/7 makerspace in Kochi) check-in/out records via The Hub app. Tracks presence and project work.",
       "display_name": "Space Check In",
-      "estimated_row_count": 78669,
+      "estimated_row_count": 78779,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3479,7 +3479,7 @@
     {
       "description": "Reserved usernames ensuring uniqueness across the platform.",
       "display_name": "Username",
-      "estimated_row_count": 10009,
+      "estimated_row_count": 10071,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3524,7 +3524,7 @@
     {
       "description": "Login records for phone-based authentication. Links to memberships for organization profiles.",
       "display_name": "Users",
-      "estimated_row_count": 53647,
+      "estimated_row_count": 54117,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
