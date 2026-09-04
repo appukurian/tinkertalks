@@ -6,7 +6,7 @@
     {
       "description": "Post-event surveys collecting ratings and improvement suggestions from attendees.",
       "display_name": "Attendee Feedback",
-      "estimated_row_count": 22776,
+      "estimated_row_count": 22890,
       "fields": [
         {
           "base_type": "type/Integer",
@@ -100,7 +100,7 @@
     {
       "description": "Event registrations and check-ins. Tracks attendance, check-in times, team assignments, and venue selections.",
       "display_name": "Attendees",
-      "estimated_row_count": 109362,
+      "estimated_row_count": 109711,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -399,7 +399,7 @@
     {
       "description": "Educational history for member profiles. Tracks schools, degrees, and enrollment periods.",
       "display_name": "Education",
-      "estimated_row_count": 51495,
+      "estimated_row_count": 51715,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -507,7 +507,7 @@
     {
       "description": "Member enrollments in event groups/series. Tracks participation status.",
       "display_name": "Event Group Subscriptions",
-      "estimated_row_count": 12351,
+      "estimated_row_count": 12404,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -559,7 +559,7 @@
     {
       "description": "Event series like Study Jams (multi-session learning cohorts). Supports subscriptions, projects, and Discord integration.",
       "display_name": "Event Groups",
-      "estimated_row_count": 299,
+      "estimated_row_count": 302,
       "fields": [
         {
           "base_type": "type/Text",
@@ -789,7 +789,7 @@
     {
       "description": "Organizer post-event reports with ratings, photos, and materials. Tracks event success metrics.",
       "display_name": "Event Report",
-      "estimated_row_count": 1948,
+      "estimated_row_count": 1954,
       "fields": [
         {
           "base_type": "type/Integer",
@@ -911,7 +911,7 @@
     {
       "description": "Teams within team-based events. Supports join codes and venue assignments.",
       "display_name": "Event Team",
-      "estimated_row_count": 10956,
+      "estimated_row_count": 11115,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -977,7 +977,7 @@
     {
       "description": "Multiple venue support for events. Allows different locations with separate capacities and schedules.",
       "display_name": "Event Venue",
-      "estimated_row_count": 314,
+      "estimated_row_count": 315,
       "fields": [
         {
           "base_type": "type/Text",
@@ -1092,7 +1092,7 @@
     {
       "description": "Event definitions with settings for virtual/physical, team-based, multi-venue, project submissions, and prizes.",
       "display_name": "Events",
-      "estimated_row_count": 2640,
+      "estimated_row_count": 2646,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -1452,7 +1452,7 @@
     {
       "description": "Work and volunteer experience for member profiles. Tracks positions, companies, and tenure.",
       "display_name": "Experience",
-      "estimated_row_count": 2926,
+      "estimated_row_count": 2931,
       "fields": [
         {
           "base_type": "type/Text",
@@ -1703,7 +1703,7 @@
     {
       "description": "Vouching/referral system. Members invite others by phone number; tracks invitation status.",
       "display_name": "Invitations",
-      "estimated_row_count": 38658,
+      "estimated_row_count": 38824,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -1769,7 +1769,7 @@
     {
       "description": "Member profiles with personal info, social links, skills, and preferences. Main record linking users to organizations.",
       "display_name": "Memberships",
-      "estimated_row_count": 47460,
+      "estimated_row_count": 47653,
       "fields": [
         {
           "base_type": "type/JSON",
@@ -2129,7 +2129,7 @@
     {
       "description": "Job, internship, volunteering, and fellowship listings from partners. Supports eligibility criteria and applications.",
       "display_name": "Opportunities",
-      "estimated_row_count": 143,
+      "estimated_row_count": 144,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -2321,7 +2321,7 @@
     {
       "description": "Event organizer assignments linking members to events. Supports multi-venue organizer roles.",
       "display_name": "Organizers",
-      "estimated_row_count": 14500,
+      "estimated_row_count": 14525,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2512,7 +2512,7 @@
     {
       "description": "Sponsor, opportunity provider, and event collaborator organizations. Reusable across events and opportunities.",
       "display_name": "Partners",
-      "estimated_row_count": 216,
+      "estimated_row_count": 217,
       "fields": [
         {
           "base_type": "type/Text",
@@ -2665,7 +2665,7 @@
     {
       "description": "Project team members with display ordering. Links members to projects they contributed to.",
       "display_name": "Project Collaborators",
-      "estimated_row_count": 14113,
+      "estimated_row_count": 14640,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2717,7 +2717,7 @@
     {
       "description": "Project milestone tracking with ordered stages. Tracks progress through development lifecycle.",
       "display_name": "Project Stages",
-      "estimated_row_count": 8018,
+      "estimated_row_count": 8315,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -2783,7 +2783,7 @@
     {
       "description": "Hackathon/event submissions and portfolio projects. Supports collaboration, stages, and verification.",
       "display_name": "Projects",
-      "estimated_row_count": 7884,
+      "estimated_row_count": 8180,
       "fields": [
         {
           "base_type": "type/Boolean",
@@ -3016,7 +3016,7 @@
     {
       "description": "TinkerSpace (24/7 makerspace in Kochi) check-in/out records via The Hub app. Tracks presence and project work.",
       "display_name": "Space Check In",
-      "estimated_row_count": 78882,
+      "estimated_row_count": 79005,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3479,7 +3479,7 @@
     {
       "description": "Reserved usernames ensuring uniqueness across the platform.",
       "display_name": "Username",
-      "estimated_row_count": 10161,
+      "estimated_row_count": 10207,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
@@ -3524,7 +3524,7 @@
     {
       "description": "Login records for phone-based authentication. Links to memberships for organization profiles.",
       "display_name": "Users",
-      "estimated_row_count": 54681,
+      "estimated_row_count": 54925,
       "fields": [
         {
           "base_type": "type/DateTimeWithLocalTZ",
