@@ -262,18 +262,18 @@
       }
     ]
   },
-  "synced_at": "2026-09-15T07:59:57.582766+00:00",
+  "synced_at": "2026-09-16T07:52:48.283611+00:00",
   "table_id": 50,
   "total_rows_in_table": 2000,
   "type_value_counts": {
     "Bootcamp": 134,
     "Core_Team_Meeting": 156,
     "Hackathon": 62,
-    "Learning_Program": 883,
+    "Learning_Program": 884,
     "Makeathon": 1,
-    "Meetup": 383,
+    "Meetup": 382,
     "Project_Building_Program": 1,
-    "Talk_Session": 224,
-    "Workshop": 156
+    "Talk_Session": 225,
+    "Workshop": 155
   }
 }
